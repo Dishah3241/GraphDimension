@@ -30,10 +30,11 @@ declaration. "not yet" means that row has no declaration in this library.
 | `SphereEmbeddable.orthogonalSum` | not yet |
 | `SphereEmbeddable.pole` | not yet |
 | `coreDelete`, the `(d − 1)`-core | not yet |
+| `UnitDistEmbeddable.extend_tail`, `t ≤ 2` (rung 3) | `SimpleGraph.UnitDistEmbeddable.extend_tail` (`3 ≤ d`, placed pairs `< 2` apart, at most two edges leave `s`); `t = 3` (Lemma T) not yet |
 | `unitDistEmbeddable_three_of_card_edges_le_eight` (`g(3) = 8`) | not yet; seed is Erdos1007 `Geometry/EightEdges.lean` |
 | `SphereEmbeddable.of_card_edges_le_three` / `…eight` (spherical halves of `S(2)`, `S(3)`) | not yet |
 | `unitDistEmbeddable_of_card_edges_lt` | `d = 4` only: `SimpleGraph.unitDistEmbeddable_four_of_ncard_edgeSet_le` (CN Theorem 10, at most 14 edges). General `d` is rung 3 |
-| `unitDistEmbeddable_twoSimplices` (Lemma S) | not yet |
+| `unitDistEmbeddable_twoSimplices` (Lemma S) | `SimpleGraph.exists_twoSimplices_placement` (`1 < d`; apex distance `√(2 + 2/d) < 2`) |
 | `infinite_common_unit_sphere_two_apices` (Lemma R, repaired; A36) | not yet |
 | `UnitDistEmbeddable.extend_tail` (Lemma T) | not yet |
 | `UnitDistEmbeddable.extend_simplex` (Lemma P) | not yet |

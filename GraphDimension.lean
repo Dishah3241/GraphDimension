@@ -21,3 +21,4 @@ public import GraphDimension.Geometry.CompleteMinusEdgeDimension
 public import GraphDimension.Combinatorics.SimpleGraph.TwoRegularSeven
 public import GraphDimension.Extremal.FourteenEdges
 public import GraphDimension.Combinatorics.SimpleGraph.Lovasz
+public import GraphDimension.Geometry.TwoSimplices
