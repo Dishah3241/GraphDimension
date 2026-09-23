@@ -34,7 +34,7 @@ declaration. "not yet" means that row has no declaration in this library.
 | `SphereEmbeddable.of_card_edges_le_three` / `…eight` (spherical halves of `S(2)`, `S(3)`) | not yet |
 | `unitDistEmbeddable_of_card_edges_lt` | `d = 4` only: `SimpleGraph.unitDistEmbeddable_four_of_ncard_edgeSet_le` (CN Theorem 10, at most 14 edges). General `d` is rung 3 |
 | `unitDistEmbeddable_twoSimplices` (Lemma S) | not yet |
-| `circumradius_lt_one_of_dist_le` (Lemma R) | not yet |
+| `infinite_common_unit_sphere_two_apices` (Lemma R, repaired; A36) | not yet |
 | `UnitDistEmbeddable.extend_tail` (Lemma T) | not yet |
 | `UnitDistEmbeddable.extend_simplex` (Lemma P) | not yet |
 | `unitDistEmbeddable_of_card_edges_eq` (rung 4) | not yet; statement not frozen |
