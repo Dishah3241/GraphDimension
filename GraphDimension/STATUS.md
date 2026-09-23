@@ -12,7 +12,7 @@ declaration. "not yet" means that row has no declaration in this library.
 | `infinite_sphere_inter_of_regular_simplex` | `EuclideanGeometry.infinite_sphere_inter_of_regular_simplex` (`k + 1 ≤ d` points) |
 | `card_le_of_equilateral` | `EuclideanGeometry.card_le_of_equilateral` (geometry, not graphs, so outside `SimpleGraph`) |
 | `hasDimension_completeGraph` | `SimpleGraph.hasDimension_completeGraph` (every `n`), `unitDistEmbeddable_completeGraph` |
-| `hasDimension_completeGraph_deleteEdge` | `SimpleGraph.unitDistEmbeddable_completeGraph_five_deleteEdge` (`n = 5` upper bound); the dimension statement is not yet |
+| `hasDimension_completeGraph_deleteEdge` | `SimpleGraph.hasDimension_completeGraph_deleteEdge` (`n ≥ 3`, `u ≠ v`); the `n = 5` placement `unitDistEmbeddable_completeGraph_five_deleteEdge` stays |
 | `hasDimension_completeBipartite` | `SimpleGraph.hasDimension_completeBipartiteGraph_three_three` (`K₃,₃`); the statement for `m, n ≥ 3` is not yet |
 | `hasDimension_K133` | `SimpleGraph.hasDimension_K133`: no placement in `ℝ⁴` (orthogonal-complement count), explicit placement in `ℝ⁵` |
 | `hasDimension_cocktail` | `SimpleGraph.hasDimension_completeMultipartiteGraph_one_two_two_two`, `..._two_two_two_two` (lower bound via a `K₃,₃` homomorphism) |
