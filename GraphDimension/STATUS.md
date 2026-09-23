@@ -25,7 +25,7 @@ declaration. "not yet" means that row has no declaration in this library.
 | `SphereEmbeddable.of_degenerate` | not yet |
 | `SphereEmbeddable.of_compl_matching` | not yet |
 | `not_embeddable_complete` | not yet |
-| `exists_partition_maxDegree_le` (Lovász 1966, FKS Lemma 5) | not yet |
+| `exists_partition_maxDegree_le` (Lovász 1966, FKS Lemma 5) | `SimpleGraph.exists_partition_degree_le` (neighbour counts in each part) and `SimpleGraph.exists_partition_maxDegree_le` (induced maximum degree); two parts only |
 | `SphereEmbeddable.of_maxDegree_le` (FKS Proposition 2) | not yet |
 | `SphereEmbeddable.orthogonalSum` | not yet |
 | `SphereEmbeddable.pole` | not yet |
