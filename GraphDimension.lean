@@ -40,3 +40,4 @@ public import GraphDimension.Sphere.Proposition2
 public import GraphDimension.Extremal.FKS.Defs
 public import GraphDimension.Extremal.FKS.Base
 public import GraphDimension.Examples.FKSDefs
+public import GraphDimension.Sphere.DegreeTwoDisconnected
