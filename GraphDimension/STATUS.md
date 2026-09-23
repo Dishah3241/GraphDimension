@@ -14,7 +14,7 @@ declaration. "not yet" means that row has no declaration in this library.
 | `hasDimension_completeGraph` | `SimpleGraph.hasDimension_completeGraph` (every `n`), `unitDistEmbeddable_completeGraph` |
 | `hasDimension_completeGraph_deleteEdge` | `SimpleGraph.unitDistEmbeddable_completeGraph_five_deleteEdge` (`n = 5` upper bound); the dimension statement is not yet |
 | `hasDimension_completeBipartite` | `SimpleGraph.hasDimension_completeBipartiteGraph_three_three` (`K₃,₃`); the statement for `m, n ≥ 3` is not yet |
-| `hasDimension_K133` | not yet |
+| `hasDimension_K133` | `SimpleGraph.hasDimension_K133`: no placement in `ℝ⁴` (orthogonal-complement count), explicit placement in `ℝ⁵` |
 | `hasDimension_cocktail` | `SimpleGraph.hasDimension_completeMultipartiteGraph_one_two_two_two`, `..._two_two_two_two` (lower bound via a `K₃,₃` homomorphism) |
 | `regular_two_classification` | `SimpleGraph.isRegularOfDegree_two_fin_six` (six vertices). For seven vertices, use Mathlib's `SimpleGraph.IsCycles` (`IsCycles.exists_cycle_toSubgraph_verts_eq_connectedComponentSupp`) rather than a new leaf |
 | `hasDimension_completeMultipartite` | not yet |

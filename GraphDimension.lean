@@ -16,3 +16,4 @@ public import GraphDimension.Geometry.CompleteGraph
 public import GraphDimension.Geometry.SimplexSphere
 public import GraphDimension.Geometry.Extend
 public import GraphDimension.Geometry.Cocktail
+public import GraphDimension.Geometry.K133
