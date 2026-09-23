@@ -11,3 +11,5 @@ public import GraphDimension.Geometry.Reattach
 public import GraphDimension.Geometry.UnitDistanceComap
 public import GraphDimension.Geometry.Complement
 public import GraphDimension.Mathlib.UnitDistEmbedding
+public import GraphDimension.Geometry.Equilateral
+public import GraphDimension.Geometry.CompleteGraph

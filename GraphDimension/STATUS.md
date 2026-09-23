@@ -10,8 +10,8 @@ declaration. "not yet" means that row has no declaration in this library.
 | `dim_le_of_le_compl` | `SimpleGraph.dim_le_of_le_compl`, and `UnitDistEmbeddable.of_le_compl` |
 | `UnitDistEmbeddable.extend` | `SimpleGraph.UnitDistEmbeddable.extend_degree_le_two_fin_three` (degree at most 2 in `ℝ³`); the general statement is not yet |
 | `infinite_sphere_inter_of_regular_simplex` | not yet |
-| `card_le_of_equilateral` | not yet |
-| `hasDimension_completeGraph` | not yet |
+| `card_le_of_equilateral` | `EuclideanGeometry.card_le_of_equilateral` (geometry, not graphs, so outside `SimpleGraph`) |
+| `hasDimension_completeGraph` | `SimpleGraph.hasDimension_completeGraph` (every `n`), `unitDistEmbeddable_completeGraph` |
 | `hasDimension_completeGraph_deleteEdge` | `SimpleGraph.unitDistEmbeddable_completeGraph_five_deleteEdge` (`n = 5` upper bound); the dimension statement is not yet |
 | `hasDimension_completeBipartite` | `SimpleGraph.hasDimension_completeBipartiteGraph_three_three` (`K₃,₃`); the statement for `m, n ≥ 3` is not yet |
 | `hasDimension_K133` | not yet |
