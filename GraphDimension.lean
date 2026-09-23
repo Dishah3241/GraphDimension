@@ -9,3 +9,5 @@ public import GraphDimension.Geometry.CompleteMinusEdge
 public import GraphDimension.Geometry.FinLe
 public import GraphDimension.Geometry.Reattach
 public import GraphDimension.Geometry.UnitDistanceComap
+public import GraphDimension.Geometry.Complement
+public import GraphDimension.Mathlib.UnitDistEmbedding
