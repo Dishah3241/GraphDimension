@@ -23,7 +23,7 @@ declaration. "not yet" means that row has no declaration in this library.
 | `SphereEmbeddable.toUnitDist` | `SimpleGraph.SphereEmbeddable.toUnitDist` |
 | `SphereEmbeddable.extend` | `SimpleGraph.SphereEmbeddable.extend` (FKS Lemma 11: at most `d − 2` neighbours), `.extend_insert` (`Sphere/Extend.lean`) |
 | `SphereEmbeddable.of_degenerate` | `SimpleGraph.SphereEmbeddable.of_degenerate` (FKS Cor. 12), with `.exists_core` and `.exists_core_subset` (a spherical placement of the core extends to `G`, or to `t ⊇ c`) |
-| `SphereEmbeddable.of_compl_matching` | not yet |
+| `SphereEmbeddable.of_compl_matching` | `SimpleGraph.SphereEmbeddable.of_compl_matching` (FKS Lemma 13 for any `k ≤ d`, `card V ≤ d + k`: the repaired Lemma M), `Sphere/CrossPolytope.lean`; examples `Examples/CrossPolytope.lean`: the octahedron on `𝕊²`, `K₄` not |
 | `not_embeddable_complete` | not yet |
 | `exists_partition_maxDegree_le` (Lovász 1966, FKS Lemma 5) | `SimpleGraph.exists_partition_degree_le` (neighbour counts in each part) and `SimpleGraph.exists_partition_maxDegree_le` (induced maximum degree); two parts only |
 | `SphereEmbeddable.of_maxDegree_le` (FKS Proposition 2) | partial: `SimpleGraph.SphereEmbeddable.of_degree_le_two` (base `d = 2`) and `.of_degree_le_ge_four` (the Lovász step for `d ≥ 4`, given every smaller dimension). **Open: the `d = 3` base** (maximum degree two on `𝕊²`), so `of_degree_le` is not yet stated |

@@ -32,3 +32,5 @@ public import GraphDimension.Geometry.BasisApex
 public import GraphDimension.Sphere.OrthogonalSum
 public import GraphDimension.Sphere.DegreeOne
 public import GraphDimension.Sphere.MaxDegree
+public import GraphDimension.Sphere.CrossPolytope
+public import GraphDimension.Examples.CrossPolytope
