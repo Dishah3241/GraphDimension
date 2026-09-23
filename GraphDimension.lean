@@ -13,3 +13,5 @@ public import GraphDimension.Geometry.Complement
 public import GraphDimension.Mathlib.UnitDistEmbedding
 public import GraphDimension.Geometry.Equilateral
 public import GraphDimension.Geometry.CompleteGraph
+public import GraphDimension.Geometry.SimplexSphere
+public import GraphDimension.Geometry.Extend

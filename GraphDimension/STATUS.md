@@ -8,8 +8,8 @@ declaration. "not yet" means that row has no declaration in this library.
 | `UnitDistEmbeddable.mono` | `SimpleGraph.UnitDistEmbeddable.mono` |
 | `UnitDistEmbeddable.comap` / `of_le` / `of_embedding` / `of_iso` | `SimpleGraph.UnitDistEmbeddable.comap`, `.of_le`, `.of_embedding`, `.of_iso` |
 | `dim_le_of_le_compl` | `SimpleGraph.dim_le_of_le_compl`, and `UnitDistEmbeddable.of_le_compl` |
-| `UnitDistEmbeddable.extend` | `SimpleGraph.UnitDistEmbeddable.extend_degree_le_two_fin_three` (degree at most 2 in `ℝ³`); the general statement is not yet |
-| `infinite_sphere_inter_of_regular_simplex` | not yet |
+| `UnitDistEmbeddable.extend` | `SimpleGraph.UnitDistEmbeddable.extend`: the neighbours of `u` form a clique of size `k` in `G`, with `k + 1 ≤ d`. Chaffee–Noble first add the missing neighbour edges; apply `extend` to that supergraph and restrict with `of_le`. The ℝ³ degree-two case `extend_degree_le_two_fin_three` stays |
+| `infinite_sphere_inter_of_regular_simplex` | `EuclideanGeometry.infinite_sphere_inter_of_regular_simplex` (`k + 1 ≤ d` points) |
 | `card_le_of_equilateral` | `EuclideanGeometry.card_le_of_equilateral` (geometry, not graphs, so outside `SimpleGraph`) |
 | `hasDimension_completeGraph` | `SimpleGraph.hasDimension_completeGraph` (every `n`), `unitDistEmbeddable_completeGraph` |
 | `hasDimension_completeGraph_deleteEdge` | `SimpleGraph.unitDistEmbeddable_completeGraph_five_deleteEdge` (`n = 5` upper bound); the dimension statement is not yet |
