@@ -32,7 +32,8 @@ declaration. "not yet" means that row has no declaration in this library.
 | `coreDelete`, the `(d − 1)`-core | `SimpleGraph.exists_core` (re-attachment principle: a core `c` whose vertices have more than `k` neighbours in `c`, and `P c → P univ` for any `P` closed under adding a vertex with at most `k` placed neighbours), `exists_core_subset`, `induce_edgeFinset_card_le`, `exists_core_of_degenerate`; example `Examples/K4Pendant.lean` |
 | `UnitDistEmbeddable.extend_tail`, `t ≤ 2` (rung 3) | `SimpleGraph.UnitDistEmbeddable.extend_tail` (`3 ≤ d`, placed pairs `< 2` apart, at most two edges leave `s`); `t = 3` (Lemma T) not yet |
 | `unitDistEmbeddable_three_of_card_edges_le_eight` (`g(3) = 8`) | not yet; seed is Erdos1007 `Geometry/EightEdges.lean` |
-| `SphereEmbeddable.of_card_edges_le_three` / `…eight` (spherical halves of `S(2)`, `S(3)`) | not yet |
+| The induction's statement | `SimpleGraph.FKSStatement k` (`S(k)`), with `completeMinusTriangle` (`K_n − K₃`) and `fksBudget` (`g`), `Extremal/FKS/Defs.lean`; examples `Examples/FKSDefs.lean` |
+| `S(2)` (both halves) | `SimpleGraph.fksStatement_two` (`Extremal/FKS/Base.lean`). `S(3)` needs no separate base: FKS's step runs from `d = 3` |
 | `unitDistEmbeddable_of_card_edges_lt` | `d = 4` only: `SimpleGraph.unitDistEmbeddable_four_of_ncard_edgeSet_le` (CN Theorem 10, at most 14 edges). General `d` is rung 3 |
 | Case B's point off the sphere (blueprint `lem:basis-apex`) | `EuclideanGeometry.exists_unit_dist_of_orthogonal_basis`, `…_std_orthonormal_basis` (`Geometry/BasisApex.lean`) |
 | `unitDistEmbeddable_twoSimplices` (Lemma S) | `SimpleGraph.exists_twoSimplices_placement` (`1 < d`; apex distance `√(2 + 2/d) < 2`) |

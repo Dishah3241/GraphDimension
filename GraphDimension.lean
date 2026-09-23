@@ -37,3 +37,6 @@ public import GraphDimension.Examples.CrossPolytope
 public import GraphDimension.Sphere.Cycles
 public import GraphDimension.Sphere.DegreeTwo
 public import GraphDimension.Sphere.Proposition2
+public import GraphDimension.Extremal.FKS.Defs
+public import GraphDimension.Extremal.FKS.Base
+public import GraphDimension.Examples.FKSDefs
