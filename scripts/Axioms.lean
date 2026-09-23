@@ -200,7 +200,7 @@ public def main : IO UInt32 := do
     IO.eprintln s!"axioms: audited no declarations under {auditedRoot}."
     return 1
   if result.violations.isEmpty then
-    IO.println (s!"axioms: audited {result.audited} Erdos1007 declarations; " ++
+    IO.println (s!"axioms: audited {result.audited} GraphDimension declarations; " ++
       s!"every declaration reduces to {allowedAxioms}.")
     return 0
   IO.eprintln s!"axioms: {result.violations.size} proof-trust violation(s):"

@@ -1,3 +1,11 @@
 module
 
 public import GraphDimension.Basic
+public import GraphDimension.Combinatorics.SimpleGraph.TwoRegularSix
+public import GraphDimension.Examples.Separating
+public import GraphDimension.Geometry.CompleteBipartite
+public import GraphDimension.Geometry.CompleteBipartiteLowerBound
+public import GraphDimension.Geometry.CompleteMinusEdge
+public import GraphDimension.Geometry.FinLe
+public import GraphDimension.Geometry.Reattach
+public import GraphDimension.Geometry.UnitDistanceComap
