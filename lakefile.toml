@@ -26,7 +26,7 @@ git = "https://github.com/PatrickMassot/checkdecls.git"
 # fails the build.
 [[lean_lib]]
 name = "GraphDimension"
-globs = ["GraphDimension.+"]
+globs = ["GraphDimension", "GraphDimension.+"]
 
 [[lean_exe]]
 name = "axioms"
