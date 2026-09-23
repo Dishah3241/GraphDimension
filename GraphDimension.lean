@@ -44,3 +44,4 @@ public import GraphDimension.Sphere.DegreeTwoDisconnected
 public import GraphDimension.Extremal.FKS.CaseTwo
 public import GraphDimension.Extremal.FKS.Counting
 public import GraphDimension.Examples.FKSCounting
+public import GraphDimension.Geometry.TwoApices

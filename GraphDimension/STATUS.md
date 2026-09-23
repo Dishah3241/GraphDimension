@@ -39,7 +39,7 @@ declaration. "not yet" means that row has no declaration in this library.
 | `unitDistEmbeddable_of_card_edges_lt` | `d = 4` only: `SimpleGraph.unitDistEmbeddable_four_of_ncard_edgeSet_le` (CN Theorem 10, at most 14 edges). General `d` is rung 3 |
 | Case B's point off the sphere (blueprint `lem:basis-apex`) | `EuclideanGeometry.exists_unit_dist_of_orthogonal_basis`, `…_std_orthonormal_basis` (`Geometry/BasisApex.lean`) |
 | `unitDistEmbeddable_twoSimplices` (Lemma S) | `SimpleGraph.exists_twoSimplices_placement` (`1 < d`; apex distance `√(2 + 2/d) < 2`) |
-| `infinite_common_unit_sphere_two_apices` (Lemma R, repaired; A36) | not yet |
+| `infinite_common_unit_sphere_two_apices` (Lemma R, repaired; A36) | `EuclideanGeometry.infinite_common_unit_sphere_two_apices` (`Geometry/TwoApices.lean`; `d ≥ 4`) |
 | `UnitDistEmbeddable.extend_tail` (Lemma T) | not yet |
 | `UnitDistEmbeddable.extend_simplex` (Lemma P) | not yet |
 | `unitDistEmbeddable_of_card_edges_eq` (rung 4) | not yet; statement not frozen |
