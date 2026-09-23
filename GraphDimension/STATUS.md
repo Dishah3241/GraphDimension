@@ -25,5 +25,5 @@ declaration. "not yet" means that row has no declaration in this library.
 | `SphereEmbeddable.of_degenerate` | not yet |
 | `SphereEmbeddable.of_compl_matching` | not yet |
 | `not_embeddable_complete` | not yet |
-| `unitDistEmbeddable_of_card_edges_lt` | not yet |
+| `unitDistEmbeddable_of_card_edges_lt` | `d = 4` only: `SimpleGraph.unitDistEmbeddable_four_of_ncard_edgeSet_le` (CN Theorem 10, at most 14 edges). General `d` is rung 3 |
 | bridge to Mathlib | `SimpleGraph.unitDistEmbeddable_iff_nonempty_unitDistEmbedding`: `UnitDistEmbeddable n` iff Mathlib's `UnitDistEmbedding` into `EuclideanSpace ℝ (Fin n)` is nonempty |

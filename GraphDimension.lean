@@ -19,3 +19,4 @@ public import GraphDimension.Geometry.Cocktail
 public import GraphDimension.Geometry.K133
 public import GraphDimension.Geometry.CompleteMinusEdgeDimension
 public import GraphDimension.Combinatorics.SimpleGraph.TwoRegularSeven
+public import GraphDimension.Extremal.FourteenEdges
