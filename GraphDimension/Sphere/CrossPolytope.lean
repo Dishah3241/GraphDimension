@@ -124,7 +124,7 @@ theorem SphereEmbeddable.of_compl_matching {V : Type*} [Fintype V] {G : SimpleGr
         else
           r • EuclideanSpace.single
             (crossAxis hk (ψ ⟨a i, huU (a i) (not_exists.mp h1) (not_exists.mp h2)⟩)) (1 : ℝ)) = _
-    exact (dif_pos hc).trans (congrArg
+    exact (dite_eq_left hc).trans (congrArg
       (fun j : Fin k => r • EuclideanSpace.single (Fin.castLE hk j) (1 : ℝ))
       (haa _ _ hc.choose_spec))
   have hfb : ∀ i : Fin k, f (b i) = r • EuclideanSpace.single (Fin.castLE hk i) (-1 : ℝ) := by
@@ -139,7 +139,7 @@ theorem SphereEmbeddable.of_compl_matching {V : Type*} [Fintype V] {G : SimpleGr
         else
           r • EuclideanSpace.single
             (crossAxis hk (ψ ⟨b i, huU (b i) (not_exists.mp h1) (not_exists.mp h2)⟩)) (1 : ℝ)) = _
-    rw [dif_neg hna, dif_pos hc]
+    rw [dite_eq_right hna, dite_eq_left hc]
     exact congrArg
       (fun j : Fin k => r • EuclideanSpace.single (Fin.castLE hk j) (-1 : ℝ))
       (hbb _ _ hc.choose_spec)
@@ -156,7 +156,7 @@ theorem SphereEmbeddable.of_compl_matching {V : Type*} [Fintype V] {G : SimpleGr
         else
           r • EuclideanSpace.single
             (crossAxis hk (ψ ⟨x, huU x (not_exists.mp h1) (not_exists.mp h2)⟩)) (1 : ℝ)) = _
-    rw [dif_neg hna, dif_neg hnb]
+    rw [dite_eq_right hna, dite_eq_right hnb]
   -- Every vertex is matched, or one of the unmatched ones.
   have htri : ∀ x : V, (∃ i : Fin k, a i = x) ∨ (∃ i : Fin k, b i = x) ∨ x ∈ U := by
     intro x
@@ -181,12 +181,12 @@ theorem SphereEmbeddable.of_compl_matching {V : Type*} [Fintype V] {G : SimpleGr
     intro ν₁ ν₂ c₁ c₂ hc₁ h
     have h1 := congr_arg (fun z : EuclideanSpace ℝ (Fin d) => z ν₁) h
     rw [PiLp.smul_apply, PiLp.smul_apply, smul_eq_mul, smul_eq_mul, PiLp.single_apply,
-      PiLp.single_apply, if_pos rfl] at h1
+      PiLp.single_apply, ite_eq_left rfl] at h1
     by_cases hν : ν₁ = ν₂
     · subst hν
-      rw [if_pos rfl] at h1
+      rw [ite_eq_left rfl] at h1
       exact ⟨rfl, mul_left_cancel₀ hr0 h1⟩
-    · rw [if_neg hν, mul_zero] at h1
+    · rw [ite_eq_right hν, mul_zero] at h1
       rcases mul_eq_zero.mp h1 with h' | h'
       · exact absurd h' hr0
       · exact absurd h' hc₁
@@ -195,7 +195,7 @@ theorem SphereEmbeddable.of_compl_matching {V : Type*} [Fintype V] {G : SimpleGr
         r • EuclideanSpace.single ν₂ c₂⟫_ℝ = 0 := by
     intro ν₁ ν₂ c₁ c₂ hν
     rw [real_inner_smul_left, real_inner_smul_right, EuclideanSpace.inner_single_left,
-      PiLp.single_apply, if_neg hν]
+      PiLp.single_apply, ite_eq_right hν]
     norm_num
   rw [SphereEmbeddable.iff_orthogonal]
   refine ⟨f, ?_, ?_, ?_⟩
