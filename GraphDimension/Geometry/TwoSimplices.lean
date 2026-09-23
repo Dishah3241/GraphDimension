@@ -374,16 +374,16 @@ private def PartialPlacement.extend_point (P : @PartialPlacement V G d) {v : V}
     · exact (hxy.ne (hxV.trans hyV.symm)).elim
     · have hyD : y ∈ P.dom := (Finset.mem_insert.mp hy).resolve_left hyV
       change dist (if x = v then p else P.g x) (if y = v then p else P.g y) = 1
-      rw [if_pos hxV, if_neg hyV]
+      rw [ite_eq_left hxV, ite_eq_right hyV]
       exact hpNbr (hxV ▸ hxy) hyD
     · have hxD : x ∈ P.dom := (Finset.mem_insert.mp hx).resolve_left hxV
       change dist (if x = v then p else P.g x) (if y = v then p else P.g y) = 1
-      rw [if_neg hxV, if_pos hyV, dist_comm]
+      rw [ite_eq_right hxV, ite_eq_left hyV, dist_comm]
       exact hpNbr (hyV ▸ hxy.symm) hxD
     · have hxD : x ∈ P.dom := (Finset.mem_insert.mp hx).resolve_left hxV
       have hyD : y ∈ P.dom := (Finset.mem_insert.mp hy).resolve_left hyV
       change dist (if x = v then p else P.g x) (if y = v then p else P.g y) = 1
-      rw [if_neg hxV, if_neg hyV]
+      rw [ite_eq_right hxV, ite_eq_right hyV]
       exact P.edge hxy hxD hyD
 
 /-- Any two placed neighbours of an unplaced vertex are strictly less than `2` apart. -/
@@ -408,7 +408,7 @@ private lemma distClosed_extend (P : @PartialPlacement V G d) (hD : distClosed P
     have hn2d : n2 ∈ P.dom := (Finset.mem_insert.mp hn2).resolve_left hn2v
     have hlt := hD hu0 hn1d hn2d hne (by simpa [hn1v] using hu1) (by simpa [hn2v] using hu2)
     change dist (if n1 = v then p else P.g n1) (if n2 = v then p else P.g n2) < 2
-    rw [if_neg hn1v, if_neg hn2v]
+    rw [ite_eq_right hn1v, ite_eq_right hn2v]
     exact hlt
 
 private def of_subset {s : Finset V} (f : {v : V // v ∈ s} → EuclideanSpace ℝ (Fin d))
@@ -419,11 +419,11 @@ private def of_subset {s : Finset V} (f : {v : V // v ∈ s} → EuclideanSpace 
   dom := s
   inj := by
     intro x y hx hy hxy
-    have hxy' : f ⟨x, hx⟩ = f ⟨y, hy⟩ := by simpa [dif_pos hx, dif_pos hy] using hxy
+    have hxy' : f ⟨x, hx⟩ = f ⟨y, hy⟩ := by simpa [dite_eq_left hx, dite_eq_left hy] using hxy
     exact congrArg Subtype.val (hfInj hxy')
   edge := by
     intro x y hxy hx hy
-    simpa [dif_pos hx, dif_pos hy] using hfDist ⟨x, hx⟩ ⟨y, hy⟩ hxy
+    simpa [dite_eq_left hx, dite_eq_left hy] using hfDist ⟨x, hx⟩ ⟨y, hy⟩ hxy
 
 private lemma distClosed_of_subset {s : Finset V}
     (f : {v : V // v ∈ s} → EuclideanSpace ℝ (Fin d)) (hfInj : Function.Injective f)
@@ -434,7 +434,7 @@ private lemma distClosed_of_subset {s : Finset V}
   have hn1s : n1 ∈ s := by simpa [of_subset] using hn1
   have hn2s : n2 ∈ s := by simpa [of_subset] using hn2
   change dist (if hv : n1 ∈ s then f ⟨n1, hv⟩ else 0) (if hv : n2 ∈ s then f ⟨n2, hv⟩ else 0) < 2
-  rw [dif_pos hn1s, dif_pos hn2s]
+  rw [dite_eq_left hn1s, dite_eq_left hn2s]
   exact hClose ⟨n1, hn1s⟩ ⟨n2, hn2s⟩
 
 private lemma extend_tail_aux (hd : 3 ≤ d) {s : Finset V} (bad : Finset (Sym2 V))

@@ -235,20 +235,20 @@ theorem SphereEmbeddable.extend {V : Type*} [Finite V] {G : SimpleGraph V} {x : 
   · intro a b hab
     by_cases ha : a = x <;> by_cases hb : b = x
     · exact ha.trans hb.symm
-    · have hga : g a = q := dif_pos ha
-      have hgb : g b = f ⟨b, hb⟩ := dif_neg hb
+    · have hga : g a = q := dite_eq_left ha
+      have hgb : g b = f ⟨b, hb⟩ := dite_eq_right hb
       exact (hqOut ⟨⟨b, hb⟩, hgb.symm.trans (hab.symm.trans hga)⟩).elim
-    · have hga : g a = f ⟨a, ha⟩ := dif_neg ha
-      have hgb : g b = q := dif_pos hb
+    · have hga : g a = f ⟨a, ha⟩ := dite_eq_right ha
+      have hgb : g b = q := dite_eq_left hb
       exact (hqOut ⟨⟨a, ha⟩, hga.symm.trans (hab.trans hgb)⟩).elim
-    · have hga : g a = f ⟨a, ha⟩ := dif_neg ha
-      have hgb : g b = f ⟨b, hb⟩ := dif_neg hb
+    · have hga : g a = f ⟨a, ha⟩ := dite_eq_right ha
+      have hgb : g b = f ⟨b, hb⟩ := dite_eq_right hb
       exact congrArg Subtype.val <| hfInj <| hga.symm.trans (hab.trans hgb)
   · intro y
     by_cases hy : y = x
-    · rw [show g y = q from dif_pos hy]
+    · rw [show g y = q from dite_eq_left hy]
       exact hqNorm
-    · rw [show g y = f ⟨y, hy⟩ from dif_neg hy]
+    · rw [show g y = f ⟨y, hy⟩ from dite_eq_right hy]
       exact hfNorm _
   · intro a b hab
     by_cases ha : a = x <;> by_cases hb : b = x
@@ -258,17 +258,18 @@ theorem SphereEmbeddable.extend {V : Type*} [Finite V] {G : SimpleGraph V} {x : 
         inner_left_of_mem_orthogonal (subset_span (Set.mem_range_self _)) hqK
       have hp : p ⟨b, hbu⟩ = f ⟨b, hb⟩ := by
         dsimp [p]
-      rw [show g a = q from dif_pos ha, show g b = f ⟨b, hb⟩ from dif_neg hb, ← hp]
+      rw [show g a = q from dite_eq_left ha, show g b = f ⟨b, hb⟩ from dite_eq_right hb, ← hp]
       exact horthb
     · have hau : G.Adj x a := hb ▸ hab.symm
       have hortha : ⟪q, p ⟨a, hau⟩⟫_ℝ = 0 :=
         inner_left_of_mem_orthogonal (subset_span (Set.mem_range_self _)) hqK
       have hp : p ⟨a, hau⟩ = f ⟨a, ha⟩ := by
         dsimp [p]
-      rw [show g a = f ⟨a, ha⟩ from dif_neg ha, show g b = q from dif_pos hb, real_inner_comm,
+      rw [show g a = f ⟨a, ha⟩ from dite_eq_right ha, show g b = q from dite_eq_left hb,
+        real_inner_comm,
         ← hp]
       exact hortha
-    · rw [show g a = f ⟨a, ha⟩ from dif_neg ha, show g b = f ⟨b, hb⟩ from dif_neg hb]
+    · rw [show g a = f ⟨a, ha⟩ from dite_eq_right ha, show g b = f ⟨b, hb⟩ from dite_eq_right hb]
       exact hfOrth ⟨a, ha⟩ ⟨b, hb⟩ hab
 
 /-- **The re-attachment step `exists_core` consumes.** If `x` has at most `d − 2` neighbours in

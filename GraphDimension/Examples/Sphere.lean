@@ -43,7 +43,7 @@ theorem sphereEmbeddable_completeGraph (n : ℕ) :
     by_contra hne
     have hcoord := congr_arg (fun p : EuclideanSpace ℝ (Fin n) => p i) hij
     rw [PiLp.smul_apply, PiLp.smul_apply, smul_eq_mul, smul_eq_mul, PiLp.single_apply,
-      PiLp.single_apply, if_pos rfl, if_neg hne, mul_one, mul_zero] at hcoord
+      PiLp.single_apply, ite_eq_left rfl, ite_eq_right hne, mul_one, mul_zero] at hcoord
     exact hr0 hcoord
   · intro i
     have hnorm : ‖r • EuclideanSpace.single i (1 : ℝ)‖ = r := by
@@ -53,7 +53,7 @@ theorem sphereEmbeddable_completeGraph (n : ℕ) :
   · intro u v huv
     rw [top_adj] at huv
     rw [real_inner_smul_left, real_inner_smul_right, EuclideanSpace.inner_single_left,
-      PiLp.single_apply, if_neg huv, map_one]
+      PiLp.single_apply, ite_eq_right huv, map_one]
     simp only [mul_zero]
 
 /-- `K₃` is a unit-distance graph in `ℝ²` and is not spherical there.

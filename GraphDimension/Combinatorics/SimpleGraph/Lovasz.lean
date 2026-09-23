@@ -61,14 +61,15 @@ private lemma internalDegreeSum_insert {s : Finset V} {v : V} (hv : v ∉ s) :
   unfold internalDegreeSum
   rw [sum_insert hv]
   have hself : ((insert v s).filter (G.Adj v)).card = (s.filter (G.Adj v)).card := by
-    rw [filter_insert, if_neg G.irrefl]
+    rw [filter_insert, ite_eq_right G.irrefl]
   have hterms : ∀ w ∈ s, ((insert v s).filter (G.Adj w)).card =
       (s.filter (G.Adj w)).card + if G.Adj v w then 1 else 0 := by
     intro w _
     rw [filter_insert]
     by_cases h : G.Adj v w
-    · rw [if_pos h.symm, card_insert_of_notMem (fun hmem => hv (mem_filter.mp hmem).1), if_pos h]
-    · rw [if_neg (fun h' => h h'.symm), if_neg h, add_zero]
+    · rw [ite_eq_left h.symm, card_insert_of_notMem (fun hmem => hv (mem_filter.mp hmem).1),
+        ite_eq_left h]
+    · rw [ite_eq_right (fun h' => h h'.symm), ite_eq_right h, add_zero]
   calc
     ((insert v s).filter (G.Adj v)).card + ∑ w ∈ s, ((insert v s).filter (G.Adj w)).card
       = (s.filter (G.Adj v)).card + ∑ w ∈ s,
