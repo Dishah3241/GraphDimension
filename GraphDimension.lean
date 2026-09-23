@@ -42,3 +42,5 @@ public import GraphDimension.Extremal.FKS.Base
 public import GraphDimension.Examples.FKSDefs
 public import GraphDimension.Sphere.DegreeTwoDisconnected
 public import GraphDimension.Extremal.FKS.CaseTwo
+public import GraphDimension.Extremal.FKS.Counting
+public import GraphDimension.Examples.FKSCounting

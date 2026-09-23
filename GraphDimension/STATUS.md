@@ -34,6 +34,7 @@ declaration. "not yet" means that row has no declaration in this library.
 | `unitDistEmbeddable_three_of_card_edges_le_eight` (`g(3) = 8`) | not yet; seed is Erdos1007 `Geometry/EightEdges.lean` |
 | The induction's statement | `SimpleGraph.FKSStatement k` (`S(k)`), with `completeMinusTriangle` (`K_n − K₃`) and `fksBudget` (`g`), `Extremal/FKS/Defs.lean`; examples `Examples/FKSDefs.lean` |
 | `S(2)` (both halves) | `SimpleGraph.fksStatement_two` (`Extremal/FKS/Base.lean`). `S(3)` needs no separate base: FKS's step runs from `d = 3` |
+| FKS Thm 3, edge counts (blueprint `lem:branch-A`, `lem:branch-B`, `lem:case1`, `lem:case2-count`) | `Extremal/FKS/Counting.lean`: `card_edgeSet_ge_of_copy_add_vertex`, `card_edgeSet_ge_of_two_outside_clique`, `completeMinusTriangle_isContained_of_one_outside_clique`, `card_edgeSet_ge_of_cliques_small_inter`, `card_edgeSet_ge_of_cliques_inter_pred`, `card_edgeSet_ge_of_copy_two_external`; example `Examples/FKSCounting.lean` |
 | FKS Thm 3, Case 2 equality configuration (blueprint `lem:case2-place`) | `SimpleGraph.SphereEmbeddable.of_case_two` (every `d ≥ 3`), `Extremal/FKS/CaseTwo.lean` |
 | `unitDistEmbeddable_of_card_edges_lt` | `d = 4` only: `SimpleGraph.unitDistEmbeddable_four_of_ncard_edgeSet_le` (CN Theorem 10, at most 14 edges). General `d` is rung 3 |
 | Case B's point off the sphere (blueprint `lem:basis-apex`) | `EuclideanGeometry.exists_unit_dist_of_orthogonal_basis`, `…_std_orthonormal_basis` (`Geometry/BasisApex.lean`) |
