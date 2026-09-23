@@ -1,0 +1,33 @@
+name = "GraphDimension"
+version = "0.1.0"
+
+# Every target here is a gate. `lake build` alone must be enough to fail a bad tree.
+defaultTargets = ["GraphDimension", "axioms"]
+
+[leanOptions]
+autoImplicit = false
+relaxedAutoImplicit = false
+weak.linter.mathlibStandardSet = true
+# `sorry` is a build failure, not a warning. Do not set `warn.sorry = false` anywhere.
+warningAsError = true
+
+# Pinned to the Mathlib of google-deepmind/formal-conjectures and of every rung that imports this
+# library. A dependency bump is its own reviewed change.
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.33.1"
+
+[[require]]
+name = "checkdecls"
+git = "https://github.com/PatrickMassot/checkdecls.git"
+
+# The glob is authoritative: every `GraphDimension/*.lean` compiles, so an orphaned module still
+# fails the build.
+[[lean_lib]]
+name = "GraphDimension"
+globs = ["GraphDimension.+"]
+
+[[lean_exe]]
+name = "axioms"
+root = "scripts.Axioms"
