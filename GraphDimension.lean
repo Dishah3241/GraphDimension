@@ -24,3 +24,6 @@ public import GraphDimension.Combinatorics.SimpleGraph.Lovasz
 public import GraphDimension.Geometry.TwoSimplices
 public import GraphDimension.Combinatorics.SimpleGraph.Core
 public import GraphDimension.Examples.K4Pendant
+public import GraphDimension.Sphere.Basic
+public import GraphDimension.Sphere.Poles
+public import GraphDimension.Examples.Sphere
