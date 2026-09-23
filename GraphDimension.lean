@@ -22,3 +22,5 @@ public import GraphDimension.Combinatorics.SimpleGraph.TwoRegularSeven
 public import GraphDimension.Extremal.FourteenEdges
 public import GraphDimension.Combinatorics.SimpleGraph.Lovasz
 public import GraphDimension.Geometry.TwoSimplices
+public import GraphDimension.Combinatorics.SimpleGraph.Core
+public import GraphDimension.Examples.K4Pendant
