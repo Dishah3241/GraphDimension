@@ -18,12 +18,26 @@ declaration. "not yet" means that row has no declaration in this library.
 | `hasUnitDistDim_cocktail` | `SimpleGraph.hasUnitDistDim_completeMultipartiteGraph_one_two_two_two`, `..._two_two_two_two` (lower bound via a `K₃,₃` homomorphism) |
 | `regular_two_classification` | six vertices: `SimpleGraph.isRegularOfDegree_two_fin_six`. Seven vertices, in the form Theorem 10 uses: `exists_three_pairwise_disjoint_edges` and `..._compl` (through Mathlib's `IsCycles`) |
 | `hasUnitDistDim_completeMultipartite` | not yet |
-| `SphereEmbeddable` | not yet |
-| `SphereEmbeddable.iff_orthogonal` | not yet |
-| `SphereEmbeddable.toUnitDist` | not yet |
-| `SphereEmbeddable.extend` | not yet |
-| `SphereEmbeddable.of_degenerate` | not yet |
+| `SphereEmbeddable` | `SimpleGraph.SphereEmbeddable` (`Sphere/Basic.lean`); examples `Examples/Sphere.lean`: `Kₙ` on the sphere of `ℝⁿ`, `K₃` in `ℝ²` but not on its sphere |
+| `SphereEmbeddable.iff_orthogonal` | `SimpleGraph.SphereEmbeddable.iff_orthogonal`; also `.mono`, `.comap`, `.of_le`, `.of_iso` |
+| `SphereEmbeddable.toUnitDist` | `SimpleGraph.SphereEmbeddable.toUnitDist` |
+| `SphereEmbeddable.extend` | `SimpleGraph.SphereEmbeddable.extend` (FKS Lemma 11: at most `d − 2` neighbours), `.extend_insert` (`Sphere/Extend.lean`) |
+| `SphereEmbeddable.of_degenerate` | `SimpleGraph.SphereEmbeddable.of_degenerate` (FKS Cor. 12), with `.exists_core` and `.exists_core_subset` (a spherical placement of the core extends to `G`, or to `t ⊇ c`) |
 | `SphereEmbeddable.of_compl_matching` | not yet |
 | `not_embeddable_complete` | not yet |
+| `exists_partition_maxDegree_le` (Lovász 1966, FKS Lemma 5) | `SimpleGraph.exists_partition_degree_le` (neighbour counts in each part) and `SimpleGraph.exists_partition_maxDegree_le` (induced maximum degree); two parts only |
+| `SphereEmbeddable.of_maxDegree_le` (FKS Proposition 2) | not yet |
+| `SphereEmbeddable.orthogonalSum` | not yet |
+| `SphereEmbeddable.pole` | `SimpleGraph.SphereEmbeddable.pole` (one vertex, any neighbours) and `.poles` (two distinct non-adjacent vertices) (`Sphere/Poles.lean`) |
+| `coreDelete`, the `(d − 1)`-core | `SimpleGraph.exists_core` (re-attachment principle: a core `c` whose vertices have more than `k` neighbours in `c`, and `P c → P univ` for any `P` closed under adding a vertex with at most `k` placed neighbours), `exists_core_subset`, `induce_edgeFinset_card_le`, `exists_core_of_degenerate`; example `Examples/K4Pendant.lean` |
+| `UnitDistEmbeddable.extend_tail`, `t ≤ 2` (rung 3) | `SimpleGraph.UnitDistEmbeddable.extend_tail` (`3 ≤ d`, placed pairs `< 2` apart, at most two edges leave `s`); `t = 3` (Lemma T) not yet |
+| `unitDistEmbeddable_three_of_card_edges_le_eight` (`g(3) = 8`) | not yet; seed is Erdos1007 `Geometry/EightEdges.lean` |
+| `SphereEmbeddable.of_card_edges_le_three` / `…eight` (spherical halves of `S(2)`, `S(3)`) | not yet |
 | `unitDistEmbeddable_of_card_edges_lt` | `d = 4` only: `SimpleGraph.unitDistEmbeddable_four_of_ncard_edgeSet_le` (CN Theorem 10, at most 14 edges). General `d` is rung 3 |
+| Case B's point off the sphere (blueprint `lem:basis-apex`) | `EuclideanGeometry.exists_unit_dist_of_orthogonal_basis`, `…_std_orthonormal_basis` (`Geometry/BasisApex.lean`) |
+| `unitDistEmbeddable_twoSimplices` (Lemma S) | `SimpleGraph.exists_twoSimplices_placement` (`1 < d`; apex distance `√(2 + 2/d) < 2`) |
+| `infinite_common_unit_sphere_two_apices` (Lemma R, repaired; A36) | not yet |
+| `UnitDistEmbeddable.extend_tail` (Lemma T) | not yet |
+| `UnitDistEmbeddable.extend_simplex` (Lemma P) | not yet |
+| `unitDistEmbeddable_of_card_edges_eq` (rung 4) | not yet; statement not frozen |
 | bridge to Mathlib | `SimpleGraph.unitDistEmbeddable_iff_nonempty_unitDistEmbedding`: `UnitDistEmbeddable n` iff Mathlib's `UnitDistEmbedding` into `EuclideanSpace ℝ (Fin n)` is nonempty |

@@ -48,18 +48,18 @@ namespace SimpleGraph
 noncomputable section
 
 /-- The scale putting two distinct scaled basis vectors at distance one: `(1/√2)² = 1/2`. -/
-private def baseScale : ℝ := (Real.sqrt 2)⁻¹
+def baseScale : ℝ := (Real.sqrt 2)⁻¹
 
 /-- The apex half-offset: the two constant points `c ± apexOffset d · 𝟙` sit at distance one
 from every scaled basis vector `baseScale • single k 1` of `ℝᵈ`, where `c` is their centroid. -/
-private def apexOffset (d : ℕ) : ℝ := Real.sqrt ((↑d + 1) / (2 * (d : ℝ) * (d : ℝ)))
+def apexOffset (d : ℕ) : ℝ := Real.sqrt ((↑d + 1) / (2 * (d : ℝ) * (d : ℝ)))
 
 /-- The upper apex of the two-apex construction in `ℝᵈ`: a constant vector. -/
-private def apexP (d : ℕ) : EuclideanSpace ℝ (Fin d) :=
+def apexP (d : ℕ) : EuclideanSpace ℝ (Fin d) :=
   WithLp.toLp 2 fun _ => baseScale / (d : ℝ) + apexOffset d
 
 /-- The lower apex of the two-apex construction in `ℝᵈ`: a constant vector. -/
-private def apexM (d : ℕ) : EuclideanSpace ℝ (Fin d) :=
+def apexM (d : ℕ) : EuclideanSpace ℝ (Fin d) :=
   WithLp.toLp 2 fun _ => baseScale / (d : ℝ) - apexOffset d
 
 private lemma baseScale_pos : 0 < baseScale := by
@@ -77,7 +77,7 @@ private lemma frac_pos {d : ℕ} (hd : 0 < d) : 0 < (↑d + 1) / (2 * (d : ℝ) 
   have h1 : (0 : ℝ) < (d : ℝ) := by exact_mod_cast hd
   exact div_pos (by linarith) (mul_pos (by linarith) h1)
 
-private lemma apexOffset_sq {d : ℕ} (hd : 0 < d) :
+lemma apexOffset_sq {d : ℕ} (hd : 0 < d) :
     apexOffset d * apexOffset d = (↑d + 1) / (2 * (d : ℝ) * (d : ℝ)) := by
   unfold apexOffset
   rw [← pow_two]
@@ -87,10 +87,10 @@ private lemma apexOffset_ne_zero {d : ℕ} (hd : 0 < d) : apexOffset d ≠ 0 := 
   unfold apexOffset
   exact Real.sqrt_ne_zero'.mpr (frac_pos hd)
 
-private lemma apexP_apply (d : ℕ) (j : Fin d) :
+lemma apexP_apply (d : ℕ) (j : Fin d) :
     apexP d j = baseScale / (d : ℝ) + apexOffset d := rfl
 
-private lemma apexM_apply (d : ℕ) (j : Fin d) :
+lemma apexM_apply (d : ℕ) (j : Fin d) :
     apexM d j = baseScale / (d : ℝ) - apexOffset d := rfl
 
 private lemma dist_of_sq {d : ℕ} {x y : EuclideanSpace ℝ (Fin d)} (h : dist x y ^ 2 = 1) :
@@ -98,7 +98,7 @@ private lemma dist_of_sq {d : ℕ} {x y : EuclideanSpace ℝ (Fin d)} (h : dist 
   rw [← Real.sqrt_sq (dist_nonneg (x := x) (y := y)), h, Real.sqrt_one]
 
 /-- Distinct scaled basis vectors carry the `baseScale` to distance one. -/
-private lemma dist_single_single {d : ℕ} {i j : Fin d} (hij : i ≠ j) :
+lemma dist_single_single {d : ℕ} {i j : Fin d} (hij : i ≠ j) :
     dist (baseScale • EuclideanSpace.single i (1 : ℝ))
         (baseScale • EuclideanSpace.single j (1 : ℝ)) = 1 := by
   rw [dist_eq_norm, ← smul_sub, norm_smul, Real.norm_eq_abs, abs_of_nonneg baseScale_pos.le]
@@ -123,7 +123,7 @@ private lemma single_ne_single {d : ℕ} {i j : Fin d} (hij : i ≠ j) :
   have h := congrArg (fun p : EuclideanSpace ℝ (Fin d) => p i) hab
   simp [hij, baseScale_ne_zero] at h
 
-private lemma single_inj {d : ℕ} {i j : Fin d}
+lemma single_inj {d : ℕ} {i j : Fin d}
     (h : baseScale • EuclideanSpace.single i (1 : ℝ)
       = baseScale • EuclideanSpace.single j (1 : ℝ)) : i = j := by
   by_contra hij
@@ -166,7 +166,7 @@ private lemma sum_split {d : ℕ} (k : Fin d) (a b r : ℝ) :
       rw [ite_eq_right (Finset.ne_of_mem_erase hi), sub_zero],
     Finset.sum_const, nsmul_eq_mul, hcard]
 
-private lemma dist_apexP_base {d : ℕ} (hd : 0 < d) (k : Fin d) :
+lemma dist_apexP_base {d : ℕ} (hd : 0 < d) (k : Fin d) :
     dist (apexP d) (baseScale • EuclideanSpace.single k (1 : ℝ)) = 1 := by
   refine dist_of_sq ?_
   rw [EuclideanSpace.dist_sq_eq]
@@ -177,7 +177,7 @@ private lemma dist_apexP_base {d : ℕ} (hd : 0 < d) (k : Fin d) :
   rw [sq_abs, apexP_apply]
   simp [smul_eq_mul, PiLp.single_apply, mul_ite, mul_one, mul_zero]
 
-private lemma dist_apexM_base {d : ℕ} (hd : 0 < d) (k : Fin d) :
+lemma dist_apexM_base {d : ℕ} (hd : 0 < d) (k : Fin d) :
     dist (apexM d) (baseScale • EuclideanSpace.single k (1 : ℝ)) = 1 := by
   refine dist_of_sq ?_
   rw [EuclideanSpace.dist_sq_eq]
@@ -204,7 +204,7 @@ private lemma constVec_ne_single {d : ℕ} {c : ℝ} {z : EuclideanSpace ℝ (Fi
     Finset.mem_univ, ite_true] at hsum
   exact hsum
 
-private lemma apexP_ne_single {d : ℕ} (hd : 0 < d) (k : Fin d) :
+lemma apexP_ne_single {d : ℕ} (hd : 0 < d) (k : Fin d) :
     apexP d ≠ baseScale • EuclideanSpace.single k (1 : ℝ) := by
   refine constVec_ne_single (fun j => apexP_apply d j) k ?_
   have hd0 : (d : ℝ) ≠ 0 := by exact_mod_cast hd.ne'
@@ -217,7 +217,7 @@ private lemma apexP_ne_single {d : ℕ} (hd : 0 < d) (k : Fin d) :
   · exact absurd h hd0
   · exact apexOffset_ne_zero hd h
 
-private lemma apexM_ne_single {d : ℕ} (hd : 0 < d) (k : Fin d) :
+lemma apexM_ne_single {d : ℕ} (hd : 0 < d) (k : Fin d) :
     apexM d ≠ baseScale • EuclideanSpace.single k (1 : ℝ) := by
   refine constVec_ne_single (fun j => apexM_apply d j) k ?_
   have hd0 : (d : ℝ) ≠ 0 := by exact_mod_cast hd.ne'
@@ -230,14 +230,14 @@ private lemma apexM_ne_single {d : ℕ} (hd : 0 < d) (k : Fin d) :
   · exact absurd h hd0
   · exact apexOffset_ne_zero hd h
 
-private lemma apexP_ne_apexM {d : ℕ} (hd : 0 < d) : apexP d ≠ apexM d := by
+lemma apexP_ne_apexM {d : ℕ} (hd : 0 < d) : apexP d ≠ apexM d := by
   intro hab
   have h := congrArg (fun p : EuclideanSpace ℝ (Fin d) => p (⟨0, hd⟩ : Fin d)) hab
   rw [apexP_apply, apexM_apply] at h
   exact (apexOffset_ne_zero hd) (by linarith)
 
 /-- The `d` vertices other than `u, v` of `Fin (d + 2)` admit an injective labelling by `Fin d`. -/
-private lemma exists_axis_labelling {d : ℕ} (hd : 0 < d) {u v : Fin (d + 2)} (huv : u ≠ v) :
+lemma exists_axis_labelling {d : ℕ} (hd : 0 < d) {u v : Fin (d + 2)} (huv : u ≠ v) :
     ∃ κ : Fin (d + 2) → Fin d, ∀ x y : Fin (d + 2), x ≠ y →
       x ∉ ({u, v} : Set (Fin (d + 2))) → y ∉ ({u, v} : Set (Fin (d + 2))) → κ x ≠ κ y := by
   set S : Finset (Fin (d + 2)) := (Finset.univ.erase u).erase v with hSdef

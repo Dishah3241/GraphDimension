@@ -20,3 +20,12 @@ public import GraphDimension.Geometry.K133
 public import GraphDimension.Geometry.CompleteMinusEdgeDimension
 public import GraphDimension.Combinatorics.SimpleGraph.TwoRegularSeven
 public import GraphDimension.Extremal.FourteenEdges
+public import GraphDimension.Combinatorics.SimpleGraph.Lovasz
+public import GraphDimension.Geometry.TwoSimplices
+public import GraphDimension.Combinatorics.SimpleGraph.Core
+public import GraphDimension.Examples.K4Pendant
+public import GraphDimension.Sphere.Basic
+public import GraphDimension.Sphere.Poles
+public import GraphDimension.Examples.Sphere
+public import GraphDimension.Sphere.Extend
+public import GraphDimension.Geometry.BasisApex
