@@ -34,3 +34,6 @@ public import GraphDimension.Sphere.DegreeOne
 public import GraphDimension.Sphere.MaxDegree
 public import GraphDimension.Sphere.CrossPolytope
 public import GraphDimension.Examples.CrossPolytope
+public import GraphDimension.Sphere.Cycles
+public import GraphDimension.Sphere.DegreeTwo
+public import GraphDimension.Sphere.Proposition2
