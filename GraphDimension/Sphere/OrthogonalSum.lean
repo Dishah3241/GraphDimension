@@ -114,12 +114,12 @@ theorem SphereEmbeddable.orthogonalSum {V : Type*} {G : SimpleGraph V} {s : Set 
   · intro a b hab
     by_cases ha : a ∈ s
     · by_cases hb : b ∈ s
-      · have hφa : φ a = padLeft (f ⟨a, ha⟩) := dif_pos ha
-        have hφb : φ b = padLeft (f ⟨b, hb⟩) := dif_pos hb
+      · have hφa : φ a = padLeft (f ⟨a, ha⟩) := dite_eq_left ha
+        have hφb : φ b = padLeft (f ⟨b, hb⟩) := dite_eq_left hb
         have hfeq := padLeft_injective m n (hφa ▸ hφb ▸ hab)
         exact congrArg Subtype.val (hfInj hfeq)
-      · have hφa : φ a = padLeft (f ⟨a, ha⟩) := dif_pos ha
-        have hφb : φ b = padRight (g ⟨b, hb⟩) := dif_neg hb
+      · have hφa : φ a = padLeft (f ⟨a, ha⟩) := dite_eq_left ha
+        have hφb : φ b = padRight (g ⟨b, hb⟩) := dite_eq_right hb
         have hzero : f ⟨a, ha⟩ = 0 := by
           ext i
           have hcoord := congr_arg (fun z => z (Fin.castAdd n i)) hab
@@ -129,8 +129,8 @@ theorem SphereEmbeddable.orthogonalSum {V : Type*} {G : SimpleGraph V} {s : Set 
         rw [hzero, norm_zero, zero_pow (by decide : (2 : ℕ) ≠ 0)] at hnorm
         norm_num at hnorm
     · by_cases hb : b ∈ s
-      · have hφa : φ a = padRight (g ⟨a, ha⟩) := dif_neg ha
-        have hφb : φ b = padLeft (f ⟨b, hb⟩) := dif_pos hb
+      · have hφa : φ a = padRight (g ⟨a, ha⟩) := dite_eq_right ha
+        have hφb : φ b = padLeft (f ⟨b, hb⟩) := dite_eq_left hb
         have hzero : f ⟨b, hb⟩ = 0 := by
           ext i
           have hcoord := congr_arg (fun z => z (Fin.castAdd n i)) hab
@@ -139,29 +139,29 @@ theorem SphereEmbeddable.orthogonalSum {V : Type*} {G : SimpleGraph V} {s : Set 
         have hnorm := hfNorm ⟨b, hb⟩
         rw [hzero, norm_zero, zero_pow (by decide : (2 : ℕ) ≠ 0)] at hnorm
         norm_num at hnorm
-      · have hφa : φ a = padRight (g ⟨a, ha⟩) := dif_neg ha
-        have hφb : φ b = padRight (g ⟨b, hb⟩) := dif_neg hb
+      · have hφa : φ a = padRight (g ⟨a, ha⟩) := dite_eq_right ha
+        have hφb : φ b = padRight (g ⟨b, hb⟩) := dite_eq_right hb
         have hgeq := padRight_injective m n (hφa ▸ hφb ▸ hab)
         exact congrArg Subtype.val (hgInj hgeq)
   · intro v
     by_cases hv : v ∈ s
-    · rw [show φ v = padLeft (f ⟨v, hv⟩) from dif_pos hv, norm_sq_padLeft, hfNorm]
-    · rw [show φ v = padRight (g ⟨v, hv⟩) from dif_neg hv, norm_sq_padRight, hgNorm]
+    · rw [show φ v = padLeft (f ⟨v, hv⟩) from dite_eq_left hv, norm_sq_padLeft, hfNorm]
+    · rw [show φ v = padRight (g ⟨v, hv⟩) from dite_eq_right hv, norm_sq_padRight, hgNorm]
   · intro u v huv
     by_cases hu : u ∈ s
     · by_cases hv : v ∈ s
-      · rw [show φ u = padLeft (f ⟨u, hu⟩) from dif_pos hu,
-          show φ v = padLeft (f ⟨v, hv⟩) from dif_pos hv, inner_padLeft]
+      · rw [show φ u = padLeft (f ⟨u, hu⟩) from dite_eq_left hu,
+          show φ v = padLeft (f ⟨v, hv⟩) from dite_eq_left hv, inner_padLeft]
         exact hfOrth ⟨u, hu⟩ ⟨v, hv⟩ (by simpa [induce_adj] using huv)
-      · rw [show φ u = padLeft (f ⟨u, hu⟩) from dif_pos hu,
-          show φ v = padRight (g ⟨v, hv⟩) from dif_neg hv]
+      · rw [show φ u = padLeft (f ⟨u, hu⟩) from dite_eq_left hu,
+          show φ v = padRight (g ⟨v, hv⟩) from dite_eq_right hv]
         exact inner_padLeft_padRight _ _
     · by_cases hv : v ∈ s
-      · rw [show φ u = padRight (g ⟨u, hu⟩) from dif_neg hu,
-          show φ v = padLeft (f ⟨v, hv⟩) from dif_pos hv, real_inner_comm]
+      · rw [show φ u = padRight (g ⟨u, hu⟩) from dite_eq_right hu,
+          show φ v = padLeft (f ⟨v, hv⟩) from dite_eq_left hv, real_inner_comm]
         exact inner_padLeft_padRight _ _
-      · rw [show φ u = padRight (g ⟨u, hu⟩) from dif_neg hu,
-          show φ v = padRight (g ⟨v, hv⟩) from dif_neg hv, inner_padRight]
+      · rw [show φ u = padRight (g ⟨u, hu⟩) from dite_eq_right hu,
+          show φ v = padRight (g ⟨v, hv⟩) from dite_eq_right hv, inner_padRight]
         exact hgOrth ⟨u, hu⟩ ⟨v, hv⟩ (by simpa [induce_adj] using huv)
 
 end

@@ -300,12 +300,12 @@ private lemma val_lt_denom (e : V ≃ Fin (Fintype.card V)) (v : V) :
 private lemma vertexAngle_eq_base (e : V ≃ Fin (Fintype.card V)) {v : V}
     (h : v = anchor (G := G) e v) :
     vertexAngle (G := G) e v = baseAngle (G := G) e v := by
-  rw [vertexAngle, if_pos h]
+  rw [vertexAngle, ite_eq_left h]
 
 private lemma vertexAngle_eq_shift (e : V ≃ Fin (Fintype.card V)) {v : V}
     (h : v ≠ anchor (G := G) e v) :
     vertexAngle (G := G) e v = baseAngle (G := G) e v + Real.pi / 2 := by
-  rw [vertexAngle, if_neg h]
+  rw [vertexAngle, ite_eq_right h]
 
 private lemma place_injective (hdeg : ∀ v, G.degree v ≤ 1) (e : V ≃ Fin (Fintype.card V)) :
     Function.Injective fun v => onCircle (vertexAngle (G := G) e v) := by
