@@ -26,8 +26,8 @@ declaration. "not yet" means that row has no declaration in this library.
 | `SphereEmbeddable.of_compl_matching` | not yet |
 | `not_embeddable_complete` | not yet |
 | `exists_partition_maxDegree_le` (Lovász 1966, FKS Lemma 5) | `SimpleGraph.exists_partition_degree_le` (neighbour counts in each part) and `SimpleGraph.exists_partition_maxDegree_le` (induced maximum degree); two parts only |
-| `SphereEmbeddable.of_maxDegree_le` (FKS Proposition 2) | not yet |
-| `SphereEmbeddable.orthogonalSum` | not yet |
+| `SphereEmbeddable.of_maxDegree_le` (FKS Proposition 2) | partial: `SimpleGraph.SphereEmbeddable.of_degree_le_two` (base `d = 2`) and `.of_degree_le_ge_four` (the Lovász step for `d ≥ 4`, given every smaller dimension). **Open: the `d = 3` base** (maximum degree two on `𝕊²`), so `of_degree_le` is not yet stated |
+| `SphereEmbeddable.orthogonalSum` | `SimpleGraph.SphereEmbeddable.orthogonalSum` (`Sphere/OrthogonalSum.lean`) |
 | `SphereEmbeddable.pole` | `SimpleGraph.SphereEmbeddable.pole` (one vertex, any neighbours) and `.poles` (two distinct non-adjacent vertices) (`Sphere/Poles.lean`) |
 | `coreDelete`, the `(d − 1)`-core | `SimpleGraph.exists_core` (re-attachment principle: a core `c` whose vertices have more than `k` neighbours in `c`, and `P c → P univ` for any `P` closed under adding a vertex with at most `k` placed neighbours), `exists_core_subset`, `induce_edgeFinset_card_le`, `exists_core_of_degenerate`; example `Examples/K4Pendant.lean` |
 | `UnitDistEmbeddable.extend_tail`, `t ≤ 2` (rung 3) | `SimpleGraph.UnitDistEmbeddable.extend_tail` (`3 ≤ d`, placed pairs `< 2` apart, at most two edges leave `s`); `t = 3` (Lemma T) not yet |
