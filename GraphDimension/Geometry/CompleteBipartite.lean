@@ -21,7 +21,7 @@ exactly two coordinates by `±r`, so all nine cross-distances are one. The same 
 `(r, 0, 0, 0)` and `(0, r, 0, 0)` at distance one.
 
 The lower bound is `not_unitDistEmbeddable_completeBipartiteGraph_three_three`. Together with
-`UnitDistEmbeddable.mono` they give `hasDimension_completeBipartiteGraph_three_three`.
+`UnitDistEmbeddable.mono` they give `hasUnitDistDim_completeBipartiteGraph_three_three`.
 
 ## References
 
@@ -139,8 +139,8 @@ theorem unitDistEmbeddable_completeBipartiteGraph_three_three :
 Chaffee–Noble Lemma 3, attributed there to Erdős–Harary–Tutte. The lower bound is the absence of
 a placement in `ℝ³`; `UnitDistEmbeddable.mono` carries that absence down to every smaller
 dimension. -/
-theorem hasDimension_completeBipartiteGraph_three_three :
-    (completeBipartiteGraph (Fin 3) (Fin 3)).HasDimension 4 := by
+theorem hasUnitDistDim_completeBipartiteGraph_three_three :
+    (completeBipartiteGraph (Fin 3) (Fin 3)).HasUnitDistDim 4 := by
   refine ⟨unitDistEmbeddable_completeBipartiteGraph_three_three, ?_⟩
   rw [mem_lowerBounds]
   intro m hm

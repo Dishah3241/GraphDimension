@@ -29,6 +29,6 @@ def UnitDistEmbeddable (n : ℕ) : Prop :=
     ∀ u v, G.Adj u v → dist (f u) (f v) = 1
 
 /-- `n` is the least dimension admitting such a placement. -/
-def HasDimension (n : ℕ) : Prop := IsLeast {m | G.UnitDistEmbeddable m} n
+def HasUnitDistDim (n : ℕ) : Prop := IsLeast {m | G.UnitDistEmbeddable m} n
 
 end SimpleGraph

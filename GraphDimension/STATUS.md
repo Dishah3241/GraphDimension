@@ -11,13 +11,13 @@ declaration. "not yet" means that row has no declaration in this library.
 | `UnitDistEmbeddable.extend` | `SimpleGraph.UnitDistEmbeddable.extend`: the neighbours of `u` form a clique of size `k` in `G`, with `k + 1 ≤ d`. Chaffee–Noble first add the missing neighbour edges; apply `extend` to that supergraph and restrict with `of_le`. The ℝ³ degree-two case `extend_degree_le_two_fin_three` stays |
 | `infinite_sphere_inter_of_regular_simplex` | `EuclideanGeometry.infinite_sphere_inter_of_regular_simplex` (`k + 1 ≤ d` points) |
 | `card_le_of_equilateral` | `EuclideanGeometry.card_le_of_equilateral` (geometry, not graphs, so outside `SimpleGraph`) |
-| `hasDimension_completeGraph` | `SimpleGraph.hasDimension_completeGraph` (every `n`), `unitDistEmbeddable_completeGraph` |
-| `hasDimension_completeGraph_deleteEdge` | `SimpleGraph.hasDimension_completeGraph_deleteEdge` (`n ≥ 3`, `u ≠ v`); the `n = 5` placement `unitDistEmbeddable_completeGraph_five_deleteEdge` stays |
-| `hasDimension_completeBipartite` | `SimpleGraph.hasDimension_completeBipartiteGraph_three_three` (`K₃,₃`); the statement for `m, n ≥ 3` is not yet |
-| `hasDimension_K133` | `SimpleGraph.hasDimension_K133`: no placement in `ℝ⁴` (orthogonal-complement count), explicit placement in `ℝ⁵` |
-| `hasDimension_cocktail` | `SimpleGraph.hasDimension_completeMultipartiteGraph_one_two_two_two`, `..._two_two_two_two` (lower bound via a `K₃,₃` homomorphism) |
+| `hasUnitDistDim_completeGraph` | `SimpleGraph.hasUnitDistDim_completeGraph` (every `n`), `unitDistEmbeddable_completeGraph` |
+| `hasUnitDistDim_completeGraph_deleteEdge` | `SimpleGraph.hasUnitDistDim_completeGraph_deleteEdge` (`n ≥ 3`, `u ≠ v`); the `n = 5` placement `unitDistEmbeddable_completeGraph_five_deleteEdge` stays |
+| `hasUnitDistDim_completeBipartite` | `SimpleGraph.hasUnitDistDim_completeBipartiteGraph_three_three` (`K₃,₃`); the statement for `m, n ≥ 3` is not yet |
+| `hasUnitDistDim_K133` | `SimpleGraph.hasUnitDistDim_K133`: no placement in `ℝ⁴` (orthogonal-complement count), explicit placement in `ℝ⁵` |
+| `hasUnitDistDim_cocktail` | `SimpleGraph.hasUnitDistDim_completeMultipartiteGraph_one_two_two_two`, `..._two_two_two_two` (lower bound via a `K₃,₃` homomorphism) |
 | `regular_two_classification` | six vertices: `SimpleGraph.isRegularOfDegree_two_fin_six`. Seven vertices, in the form Theorem 10 uses: `exists_three_pairwise_disjoint_edges` and `..._compl` (through Mathlib's `IsCycles`) |
-| `hasDimension_completeMultipartite` | not yet |
+| `hasUnitDistDim_completeMultipartite` | not yet |
 | `SphereEmbeddable` | not yet |
 | `SphereEmbeddable.iff_orthogonal` | not yet |
 | `SphereEmbeddable.toUnitDist` | not yet |

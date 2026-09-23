@@ -146,8 +146,8 @@ theorem unitDistEmbeddable_completeGraph (n : ℕ) :
 
 Chaffee–Noble Lemma 1, attributed there to Erdős–Harary–Tutte. The upper bound is
 `unitDistEmbeddable_completeGraph`, and the lower bound is `card_le_of_equilateral`. -/
-theorem hasDimension_completeGraph (n : ℕ) :
-    (⊤ : SimpleGraph (Fin n)).HasDimension (n - 1) := by
+theorem hasUnitDistDim_completeGraph (n : ℕ) :
+    (⊤ : SimpleGraph (Fin n)).HasUnitDistDim (n - 1) := by
   refine ⟨unitDistEmbeddable_completeGraph n, ?_⟩
   rw [mem_lowerBounds]
   intro m hm

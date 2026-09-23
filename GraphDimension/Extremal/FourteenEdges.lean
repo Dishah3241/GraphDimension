@@ -159,7 +159,7 @@ private theorem unitDistEmbeddable_four_of_card_le_five [Fintype V] (G : SimpleG
     (show G →g (⊤ : SimpleGraph (Fin 5)) from ⟨f, fun huv => by
       rw [top_adj]
       exact f.injective.ne huv.ne⟩)
-    f.injective (hasDimension_completeGraph 5).1
+    f.injective (hasUnitDistDim_completeGraph 5).1
 
 private theorem unitDistEmbeddable_four_fin_six (G : SimpleGraph (Fin 6))
     (hE : G.edgeSet.ncard ≤ 14) : G.UnitDistEmbeddable 4 := by
@@ -184,7 +184,7 @@ private theorem unitDistEmbeddable_four_fin_six (G : SimpleGraph (Fin 6))
     · exact hna hab
     · exact hna hab.symm
   exact UnitDistEmbeddable.of_le hle
-    (hasDimension_completeGraph_deleteEdge (by decide : 3 ≤ 6) huv).1
+    (hasUnitDistDim_completeGraph_deleteEdge (by decide : 3 ≤ 6) huv).1
 
 private inductive Tag
   | g | a | b | c | d | e | f
@@ -331,7 +331,7 @@ private theorem unitDistEmbeddable_four_fin_seven (G : SimpleGraph (Fin 7)) [Dec
       ⟨part g a b c d e f, fun hxy => by
         rw [comap_adj, top_adj]
         exact part_map_rel hnodup7 hnab hncd hnef hxy⟩)
-    (part_injective hnodup7) (hasDimension_completeMultipartiteGraph_one_two_two_two).1
+    (part_injective hnodup7) (hasUnitDistDim_completeMultipartiteGraph_one_two_two_two).1
 
 private theorem edgeSet_ncard_overFin [Fintype V] {G : SimpleGraph V} {n : ℕ}
     (hV : Fintype.card V = n) : (G.overFin hV).edgeSet.ncard = G.edgeSet.ncard := by

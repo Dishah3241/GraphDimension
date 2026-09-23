@@ -41,9 +41,9 @@ theorem UnitDistEmbeddable.of_le_compl (h : Gᶜ ≤ Hᶜ) (hG : G.UnitDistEmbed
 
 /-- Chaffee–Noble Corollary 5: if `Gᶜ ≤ Hᶜ` on one vertex type, then `dim H ≤ dim G`.
 
-Stated through `HasDimension`: if `n` is the least dimension representing `G` and `m` the least
+Stated through `HasUnitDistDim`: if `n` is the least dimension representing `G` and `m` the least
 dimension representing `H`, then `m ≤ n`. -/
-theorem dim_le_of_le_compl (h : Gᶜ ≤ Hᶜ) (hG : G.HasDimension n) (hH : H.HasDimension m) :
+theorem dim_le_of_le_compl (h : Gᶜ ≤ Hᶜ) (hG : G.HasUnitDistDim n) (hH : H.HasUnitDistDim m) :
     m ≤ n :=
   IsLeast.mono hG hH fun _k hk => hk.of_le_compl h
 

@@ -540,8 +540,8 @@ theorem unitDistEmbeddable_completeMultipartiteGraph_one_three_three :
 
 Chaffee–Noble Theorem 8. The lower bound is the absence of a placement in `ℝ⁴`;
 `UnitDistEmbeddable.mono` carries that absence down to every smaller dimension. -/
-theorem hasDimension_K133 :
-    (completeMultipartiteGraph fun i : Fin 3 => Fin (![1, 3, 3] i)).HasDimension 5 := by
+theorem hasUnitDistDim_K133 :
+    (completeMultipartiteGraph fun i : Fin 3 => Fin (![1, 3, 3] i)).HasUnitDistDim 5 := by
   refine ⟨unitDistEmbeddable_completeMultipartiteGraph_one_three_three, ?_⟩
   rw [mem_lowerBounds]
   intro m hm

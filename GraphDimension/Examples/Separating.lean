@@ -17,7 +17,7 @@ import Mathlib.Topology.MetricSpace.Pseudo.Defs
 # Separating examples for the dimension definitions
 
 `UnitDistEmbeddable` does not constrain non-edges: a placement may put a non-edge at distance
-one. `HasDimension` is leastness, not mere representability: `K₂` embeds in `ℝ⁴` and does not
+one. `HasUnitDistDim` is leastness, not mere representability: `K₂` embeds in `ℝ⁴` and does not
 have dimension four.
 -/
 
@@ -71,10 +71,10 @@ theorem UnitDistEmbeddable.exists_unit_nonedge :
 
 Placing the two vertices at `0` and `1` on a coordinate axis is a unit-distance representation in
 every positive dimension, including `ℝ¹`, so four is not least. -/
-theorem completeGraph_fin_two_unitDistEmbeddable_four_not_hasDimension :
+theorem completeGraph_fin_two_unitDistEmbeddable_four_not_hasUnitDistDim :
     (∃ u v : Fin 2, (completeGraph (Fin 2)).Adj u v) ∧
       (completeGraph (Fin 2)).UnitDistEmbeddable 4 ∧
-      ¬ (completeGraph (Fin 2)).HasDimension 4 := by
+      ¬ (completeGraph (Fin 2)).HasUnitDistDim 4 := by
   have k2 (n : ℕ) (i : Fin n) : (completeGraph (Fin 2)).UnitDistEmbeddable n := by
     refine ⟨fun j => EuclideanSpace.single i (j : ℝ), ?_, ?_⟩
     · intro u v h

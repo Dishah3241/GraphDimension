@@ -334,8 +334,8 @@ dimension `n - 2`.
 The upper bound is `upperBound`: two constant apexes `c ± s · 𝟙` over the scaled basis vectors
 of `ℝⁿ⁻²`. The lower bound is `card_le_of_equilateral`: deleting one endpoint of the deleted
 edge leaves `n - 1` pairwise-adjacent vertices. Erdős–Harary–Tutte; Chaffee–Noble Lemma 2. -/
-theorem hasDimension_completeGraph_deleteEdge {n : ℕ} (hn : 3 ≤ n) {u v : Fin n} (huv : u ≠ v) :
-    ((⊤ : SimpleGraph (Fin n)).deleteEdges {s(u, v)}).HasDimension (n - 2) := by
+theorem hasUnitDistDim_completeGraph_deleteEdge {n : ℕ} (hn : 3 ≤ n) {u v : Fin n} (huv : u ≠ v) :
+    ((⊤ : SimpleGraph (Fin n)).deleteEdges {s(u, v)}).HasUnitDistDim (n - 2) := by
   obtain ⟨d, rfl⟩ : ∃ d, n = d + 2 := ⟨n - 2, by omega⟩
   have hd : 0 < d := by omega
   have hdd : d + 2 - 2 = d := by omega

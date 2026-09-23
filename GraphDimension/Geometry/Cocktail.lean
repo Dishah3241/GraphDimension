@@ -233,8 +233,8 @@ theorem unitDistEmbeddable_completeMultipartiteGraph_two_two_two_two :
 /-- `K₁,₂,₂,₂` has dimension four: it embeds in `ℝ⁴`, and in no smaller Euclidean space
 (Chaffee–Noble Lemma 9). The lower bound goes through the `K₃,₃` spanned by parts `0, 1`
 against parts `2, 3`, whose dimension is already four. -/
-theorem hasDimension_completeMultipartiteGraph_one_two_two_two :
-    (completeMultipartiteGraph fun i : Fin 4 => Fin (![1, 2, 2, 2] i)).HasDimension 4 := by
+theorem hasUnitDistDim_completeMultipartiteGraph_one_two_two_two :
+    (completeMultipartiteGraph fun i : Fin 4 => Fin (![1, 2, 2, 2] i)).HasUnitDistDim 4 := by
   refine ⟨unitDistEmbeddable_completeMultipartiteGraph_one_two_two_two, ?_⟩
   rw [mem_lowerBounds]
   intro m hm
@@ -246,8 +246,8 @@ theorem hasDimension_completeMultipartiteGraph_one_two_two_two :
 /-- `K₂,₂,₂,₂` has dimension four: it embeds in `ℝ⁴`, and in no smaller Euclidean space
 (Chaffee–Noble Lemma 9). The lower bound goes through the `K₃,₃` spanned by parts `0, 1`
 against parts `2, 3`, whose dimension is already four. -/
-theorem hasDimension_completeMultipartiteGraph_two_two_two_two :
-    (completeMultipartiteGraph fun i : Fin 4 => Fin (![2, 2, 2, 2] i)).HasDimension 4 := by
+theorem hasUnitDistDim_completeMultipartiteGraph_two_two_two_two :
+    (completeMultipartiteGraph fun i : Fin 4 => Fin (![2, 2, 2, 2] i)).HasUnitDistDim 4 := by
   refine ⟨unitDistEmbeddable_completeMultipartiteGraph_two_two_two_two, ?_⟩
   rw [mem_lowerBounds]
   intro m hm
