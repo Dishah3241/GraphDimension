@@ -195,25 +195,25 @@ private lemma extend_unitDistance {V : Type*} {G : SimpleGraph V} {u : V}
   · intro a b hab
     by_cases ha : a = u <;> by_cases hb : b = u
     · exact ha.trans hb.symm
-    · have hga : g a = p := dif_pos ha
-      have hgb : g b = f ⟨b, hb⟩ := dif_neg hb
+    · have hga : g a = p := dite_eq_left ha
+      have hgb : g b = f ⟨b, hb⟩ := dite_eq_right hb
       exact (hpOut ⟨⟨b, hb⟩, hgb.symm.trans (hab.symm.trans hga)⟩).elim
-    · have hga : g a = f ⟨a, ha⟩ := dif_neg ha
-      have hgb : g b = p := dif_pos hb
+    · have hga : g a = f ⟨a, ha⟩ := dite_eq_right ha
+      have hgb : g b = p := dite_eq_left hb
       exact (hpOut ⟨⟨a, ha⟩, hga.symm.trans (hab.trans hgb)⟩).elim
-    · have hga : g a = f ⟨a, ha⟩ := dif_neg ha
-      have hgb : g b = f ⟨b, hb⟩ := dif_neg hb
+    · have hga : g a = f ⟨a, ha⟩ := dite_eq_right ha
+      have hgb : g b = f ⟨b, hb⟩ := dite_eq_right hb
       exact congrArg Subtype.val <| hfInj <| hga.symm.trans (hab.trans hgb)
   · intro a b hab
     by_cases ha : a = u <;> by_cases hb : b = u
     · exact (hab.ne (ha.trans hb.symm)).elim
     · have hbu : G.Adj u b := by simpa [ha] using hab
-      rw [show g a = p from dif_pos ha, show g b = f ⟨b, hb⟩ from dif_neg hb]
+      rw [show g a = p from dite_eq_left ha, show g b = f ⟨b, hb⟩ from dite_eq_right hb]
       exact hpNbr hbu
     · have hau : G.Adj u a := by simpa [hb] using hab.symm
-      rw [show g a = f ⟨a, ha⟩ from dif_neg ha, show g b = p from dif_pos hb, dist_comm]
+      rw [show g a = f ⟨a, ha⟩ from dite_eq_right ha, show g b = p from dite_eq_left hb, dist_comm]
       exact hpNbr hau
-    · rw [show g a = f ⟨a, ha⟩ from dif_neg ha, show g b = f ⟨b, hb⟩ from dif_neg hb]
+    · rw [show g a = f ⟨a, ha⟩ from dite_eq_right ha, show g b = f ⟨b, hb⟩ from dite_eq_right hb]
       exact hfDist ⟨a, ha⟩ ⟨b, hb⟩ hab
 
 @[expose] public section

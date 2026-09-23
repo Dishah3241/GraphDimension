@@ -152,7 +152,7 @@ private lemma sum_split {d : ℕ} (k : Fin d) (a b r : ℝ) :
     ∑ i : Fin d, (a + b - if i = k then r else 0) ^ 2
       = (a + b - r) ^ 2 + ((d : ℝ) - 1) * (a + b) ^ 2 := by
   rw [← Finset.insert_erase (Finset.mem_univ k),
-    Finset.sum_insert (Finset.notMem_erase k Finset.univ), if_pos rfl]
+    Finset.sum_insert (Finset.notMem_erase k Finset.univ), ite_eq_left rfl]
   have hle : (1 : ℕ) ≤ d := by
     have hk := k.isLt
     omega
@@ -163,7 +163,7 @@ private lemma sum_split {d : ℕ} (k : Fin d) (a b r : ℝ) :
   have hcard : ((Finset.univ.erase k).card : ℝ) = (d : ℝ) - 1 := by
     rw [Finset.card_erase_of_mem (Finset.mem_univ k), Finset.card_univ, Fintype.card_fin, hcast]
   rw [Finset.sum_congr rfl fun i hi => by
-      rw [if_neg (Finset.ne_of_mem_erase hi), sub_zero],
+      rw [ite_eq_right (Finset.ne_of_mem_erase hi), sub_zero],
     Finset.sum_const, nsmul_eq_mul, hcard]
 
 private lemma dist_apexP_base {d : ℕ} (hd : 0 < d) (k : Fin d) :
@@ -201,7 +201,7 @@ private lemma constVec_ne_single {d : ℕ} {c : ℝ} {z : EuclideanSpace ℝ (Fi
   have hsum := congrArg (fun p : EuclideanSpace ℝ (Fin d) => ∑ j : Fin d, p j) hab
   simp only [PiLp.smul_apply, smul_eq_mul, hz, PiLp.single_apply, mul_ite, mul_one, mul_zero,
     Finset.sum_const, nsmul_eq_mul, Finset.card_univ, Fintype.card_fin, Finset.sum_ite_eq',
-    Finset.mem_univ, if_true] at hsum
+    Finset.mem_univ, ite_true] at hsum
   exact hsum
 
 private lemma apexP_ne_single {d : ℕ} (hd : 0 < d) (k : Fin d) :
@@ -259,7 +259,7 @@ private lemma exists_axis_labelling {d : ℕ} (hd : 0 < d) {u v : Fin (d + 2)} (
     simp only [hSdef, Finset.mem_erase, Finset.mem_univ, and_true]
     exact ⟨hyv, hyu⟩
   by_contra hcon
-  simp only [dif_pos hx, dif_pos hy] at hcon
+  simp only [dite_eq_left hx, dite_eq_left hy] at hcon
   exact hxy (congrArg Subtype.val ((Fintype.equivFinOfCardEq hfin).injective hcon))
 
 /-- **Upper bound** for the dimension of `Kₙ − e`: the complete graph on `d + 2` vertices with

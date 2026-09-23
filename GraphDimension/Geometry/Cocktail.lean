@@ -80,9 +80,9 @@ private theorem svec_eq {a b : ℝ} {i j : Fin 4} (ha : a ≠ 0) (h : svec i a =
     simp only [svec, PiLp.single_eq_same, PiLp.single_apply] at h2
     exact h2
   rcases eq_or_ne i j with rfl | hij
-  · rw [if_pos rfl] at h1
+  · rw [ite_eq_left rfl] at h1
     exact ⟨rfl, h1⟩
-  · rw [if_neg hij] at h1
+  · rw [ite_eq_right hij] at h1
     exact absurd h1 ha
 
 /-- Two vertices of either cocktail-party graph are adjacent exactly when they come from
@@ -108,8 +108,8 @@ private theorem cktPt_injective {s : Fin 4 → ℕ} (hs : ∀ i : Fin 4, s i ≤
   simp only [cktPt] at hvw
   have hne : (if j.val = 0 then a else -a) ≠ 0 := by
     by_cases hj : j.val = 0
-    · rw [if_pos hj]; exact ha
-    · rw [if_neg hj]
+    · rw [ite_eq_left hj]; exact ha
+    · rw [ite_eq_right hj]
       intro h0
       exact ha (by linarith)
   obtain ⟨hik, hsign⟩ := svec_eq hne hvw
@@ -119,11 +119,11 @@ private theorem cktPt_injective {s : Fin 4 → ℕ} (hs : ∀ i : Fin 4, s i ≤
   · by_cases hl0 : l.val = 0
     · have hjl : j.val = l.val := by rw [hj0, hl0]
       exact congrArg (Sigma.mk i) (Fin.eq_of_val_eq hjl)
-    · rw [hj0, if_pos rfl, if_neg hl0] at hsign
+    · rw [hj0, ite_eq_left rfl, ite_eq_right hl0] at hsign
       have h0 : a = 0 := by linarith
       exact absurd h0 ha
   · by_cases hl0 : l.val = 0
-    · rw [if_neg hj0, if_pos hl0] at hsign
+    · rw [ite_eq_right hj0, ite_eq_left hl0] at hsign
       have h0 : a = 0 := by linarith
       exact absurd h0 ha
     · have hjl : j.val = l.val :=
@@ -140,17 +140,17 @@ private theorem dist_adj {s : Fin 4 → ℕ} {a : ℝ} (ha2 : a ^ 2 = 1 / 2)
   rw [hv, hw]
   refine dist_svec_of_ne (prev_inj.ne hvw) ?_
   by_cases hj : v.2.val = 0 <;> by_cases hl : w.2.val = 0
-  · rw [if_pos hj, if_pos hl, ha2]
+  · rw [ite_eq_left hj, ite_eq_left hl, ha2]
     linarith
-  · rw [if_pos hj, if_neg hl]
+  · rw [ite_eq_left hj, ite_eq_right hl]
     have h : (-a) ^ 2 = a ^ 2 := by ring
     rw [h, ha2]
     linarith
-  · rw [if_neg hj, if_pos hl]
+  · rw [ite_eq_right hj, ite_eq_left hl]
     have h : (-a) ^ 2 = a ^ 2 := by ring
     rw [h, ha2]
     linarith
-  · rw [if_neg hj, if_neg hl]
+  · rw [ite_eq_right hj, ite_eq_right hl]
     have h : (-a) ^ 2 = a ^ 2 := by ring
     rw [h, ha2]
     linarith

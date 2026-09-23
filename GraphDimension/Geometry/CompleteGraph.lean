@@ -130,7 +130,7 @@ theorem unitDistEmbeddable_completeGraph (n : ℕ) :
       by_cases hij' : i = j
       · exact hij'
       · have hcoord : p i i = p j i := congrArg (fun x => x i) hp
-        rw [hi, hj, if_neg (Ne.symm hij')] at hcoord
+        rw [hi, hj, ite_eq_right (Ne.symm hij')] at hcoord
         exact absurd hcoord hr
     · intro i j hij
       have hcoe : ((v i - v j : V) : EuclideanSpace ℝ (Fin (n + 1))) = p i - p j := by

@@ -6,7 +6,7 @@ Authors: Dishant Shah
 module
 
 public import GraphDimension.Basic
-public import Mathlib.Data.Finite.Defs
+public import Mathlib.Basic.Finite.Defs
 public import Mathlib.Data.Set.Card
 
 import GraphDimension.Combinatorics.SimpleGraph.TwoRegularSeven
@@ -230,20 +230,22 @@ private theorem tag_cases {g a b c d e fv : Fin 7} (hn : List.Nodup [g, a, b, c,
     simpa [List.mem_toFinset, List.mem_cons, List.mem_nil_iff, or_false] using hx
   rcases hcov with rfl | rfl | rfl | rfl | rfl | rfl | rfl
   · exact Or.inl ⟨by simp [tag], rfl⟩
-  · exact Or.inr <| Or.inl ⟨by simp only [tag, if_neg hga.symm, if_true], rfl⟩
+  · exact Or.inr <| Or.inl ⟨by simp only [tag, ite_eq_right hga.symm, ite_true], rfl⟩
   · exact Or.inr <| Or.inr <| Or.inl
-      ⟨by simp only [tag, if_neg hgb.symm, if_neg hab.symm, if_true], rfl⟩
+      ⟨by simp only [tag, ite_eq_right hgb.symm, ite_eq_right hab.symm, ite_true], rfl⟩
   · exact Or.inr <| Or.inr <| Or.inr <| Or.inl
-      ⟨by simp only [tag, if_neg hgc.symm, if_neg hac.symm, if_neg hbc.symm, if_true], rfl⟩
+      ⟨by simp only [tag, ite_eq_right hgc.symm, ite_eq_right hac.symm,
+          ite_eq_right hbc.symm, ite_true], rfl⟩
   · exact Or.inr <| Or.inr <| Or.inr <| Or.inr <| Or.inl
-      ⟨by simp only [tag, if_neg hgd.symm, if_neg had.symm, if_neg hbd.symm, if_neg hcd.symm,
-          if_true], rfl⟩
+      ⟨by simp only [tag, ite_eq_right hgd.symm, ite_eq_right had.symm,
+          ite_eq_right hbd.symm, ite_eq_right hcd.symm, ite_true], rfl⟩
   · exact Or.inr <| Or.inr <| Or.inr <| Or.inr <| Or.inr <| Or.inl
-      ⟨by simp only [tag, if_neg hge.symm, if_neg hae.symm, if_neg hbe.symm, if_neg hce.symm,
-          if_neg hde.symm, if_true], rfl⟩
+      ⟨by simp only [tag, ite_eq_right hge.symm, ite_eq_right hae.symm,
+          ite_eq_right hbe.symm, ite_eq_right hce.symm, ite_eq_right hde.symm, ite_true], rfl⟩
   · exact Or.inr <| Or.inr <| Or.inr <| Or.inr <| Or.inr <| Or.inr
-      ⟨by simp only [tag, if_neg hgf.symm, if_neg haf.symm, if_neg hbf.symm, if_neg hcf.symm,
-          if_neg hdf.symm, if_neg hef.symm, if_true], rfl⟩
+      ⟨by simp only [tag, ite_eq_right hgf.symm, ite_eq_right haf.symm,
+          ite_eq_right hbf.symm, ite_eq_right hcf.symm, ite_eq_right hdf.symm,
+          ite_eq_right hef.symm, ite_true], rfl⟩
 
 private theorem part_injective {g a b c d e fv : Fin 7} (hn : List.Nodup [g, a, b, c, d, e, fv]) :
     Function.Injective (part g a b c d e fv) := by

@@ -71,9 +71,9 @@ theorem completeBipartiteGraph_three_three_unitDistEmbeddable_with_left :
       simp only [svec, PiLp.single_eq_same, PiLp.single_apply] at h2
       exact h2
     rcases eq_or_ne i j with rfl | hij
-    · rw [if_pos rfl] at h1
+    · rw [ite_eq_left rfl] at h1
       exact ⟨rfl, h1⟩
-    · rw [if_neg hij] at h1
+    · rw [ite_eq_right hij] at h1
       exact absurd h1 ha
   -- Two signed axis vectors on distinct axes, each of squared length `r² = 1/2`, are at distance 1.
   have hvec_dist : ∀ i j : Fin 4, i ≠ j → ∀ a b : ℝ,
