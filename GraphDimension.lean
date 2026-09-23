@@ -28,3 +28,4 @@ public import GraphDimension.Sphere.Basic
 public import GraphDimension.Sphere.Poles
 public import GraphDimension.Examples.Sphere
 public import GraphDimension.Sphere.Extend
+public import GraphDimension.Geometry.BasisApex
