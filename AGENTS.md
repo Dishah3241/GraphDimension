@@ -8,6 +8,9 @@ rules and governs here too; read it first. The design is `../../docs/design/grap
 
 - **Rungs import this library; it imports nothing of theirs.** A rung's `Solution` requires it at a
   40-character revision, and each rung bridges its inlined statement definitions by `Iff.rfl`.
+- **Never reuse a `formal-conjectures` name.** `FormalConjecturesForMathlib` already defines
+  `SimpleGraph.HasDimension`, and the clash stops any environment from importing both (Math finding A34).
+  Before adding a definition, `grep` `~/Code/Math/.cache/formal-conjectures` for its full name.
 - **Naming and style follow the design's §4:** Mathlib spelling in the `SimpleGraph` namespace, and
   hypotheses in the weakest form the proof allows. Nothing project-specific goes in.
 - **Gates:** `lake build` (`warningAsError`, so no `sorry`) and `lake exe axioms` (only `propext`,
