@@ -25,5 +25,17 @@ declaration. "not yet" means that row has no declaration in this library.
 | `SphereEmbeddable.of_degenerate` | not yet |
 | `SphereEmbeddable.of_compl_matching` | not yet |
 | `not_embeddable_complete` | not yet |
+| `exists_partition_maxDegree_le` (Lovász 1966, FKS Lemma 5) | not yet |
+| `SphereEmbeddable.of_maxDegree_le` (FKS Proposition 2) | not yet |
+| `SphereEmbeddable.orthogonalSum` | not yet |
+| `SphereEmbeddable.pole` | not yet |
+| `coreDelete`, the `(d − 1)`-core | not yet |
+| `unitDistEmbeddable_three_of_card_edges_le_eight` (`g(3) = 8`) | not yet; seed is Erdos1007 `Geometry/EightEdges.lean` |
+| `SphereEmbeddable.of_card_edges_le_three` / `…eight` (spherical halves of `S(2)`, `S(3)`) | not yet |
 | `unitDistEmbeddable_of_card_edges_lt` | `d = 4` only: `SimpleGraph.unitDistEmbeddable_four_of_ncard_edgeSet_le` (CN Theorem 10, at most 14 edges). General `d` is rung 3 |
+| `unitDistEmbeddable_twoSimplices` (Lemma S) | not yet |
+| `circumradius_lt_one_of_dist_le` (Lemma R) | not yet |
+| `UnitDistEmbeddable.extend_tail` (Lemma T) | not yet |
+| `UnitDistEmbeddable.extend_simplex` (Lemma P) | not yet |
+| `unitDistEmbeddable_of_card_edges_eq` (rung 4) | not yet; statement not frozen |
 | bridge to Mathlib | `SimpleGraph.unitDistEmbeddable_iff_nonempty_unitDistEmbedding`: `UnitDistEmbeddable n` iff Mathlib's `UnitDistEmbedding` into `EuclideanSpace ℝ (Fin n)` is nonempty |
