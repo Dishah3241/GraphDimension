@@ -15,3 +15,4 @@ public import GraphDimension.Geometry.Equilateral
 public import GraphDimension.Geometry.CompleteGraph
 public import GraphDimension.Geometry.SimplexSphere
 public import GraphDimension.Geometry.Extend
+public import GraphDimension.Geometry.Cocktail
