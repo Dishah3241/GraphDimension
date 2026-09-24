@@ -69,3 +69,6 @@ public import GraphDimension.Extremal.NineEdges
 public import GraphDimension.Combinatorics.SimpleGraph.SmallGraphsThree
 public import GraphDimension.Examples.SmallGraphsThree
 public import GraphDimension.Combinatorics.SimpleGraph.SevenVerticesComplement
+public import GraphDimension.Combinatorics.SimpleGraph.SixVerticesTenEdges
+public import GraphDimension.Combinatorics.SimpleGraph.SubdividedCompleteBipartite
+public import GraphDimension.Combinatorics.SimpleGraph.SevenVerticesContainment
