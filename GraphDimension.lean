@@ -60,3 +60,5 @@ public import GraphDimension.Extremal.FKS.Step
 public import GraphDimension.Extremal.FKS.Theorem3
 public import GraphDimension.Geometry.ExtendClique
 public import GraphDimension.Geometry.TailThree
+public import GraphDimension.Extremal.FKS.EqualityBranches
+public import GraphDimension.Extremal.FKS.Uniqueness
