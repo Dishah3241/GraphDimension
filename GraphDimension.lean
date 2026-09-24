@@ -55,3 +55,6 @@ public import GraphDimension.Extremal.FKS.BranchC
 public import GraphDimension.Extremal.FKS.CaseOne
 public import GraphDimension.Extremal.FKS.CaseTwoCount
 public import GraphDimension.Extremal.FKS.CaseTwoBoundary
+public import GraphDimension.Extremal.FKS.CaseTwoBridge
+public import GraphDimension.Extremal.FKS.Step
+public import GraphDimension.Extremal.FKS.Theorem3
