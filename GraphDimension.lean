@@ -45,3 +45,13 @@ public import GraphDimension.Extremal.FKS.CaseTwo
 public import GraphDimension.Extremal.FKS.Counting
 public import GraphDimension.Examples.FKSCounting
 public import GraphDimension.Geometry.TwoApices
+public import GraphDimension.Extremal.FKS.Budget
+public import GraphDimension.Extremal.FKS.Deletion
+public import GraphDimension.Extremal.FKS.CoreAssembly
+public import GraphDimension.Extremal.FKS.BranchA
+public import GraphDimension.Extremal.FKS.BranchB
+public import GraphDimension.Extremal.FKS.SmallCore
+public import GraphDimension.Extremal.FKS.BranchC
+public import GraphDimension.Extremal.FKS.CaseOne
+public import GraphDimension.Extremal.FKS.CaseTwoCount
+public import GraphDimension.Extremal.FKS.CaseTwoBoundary
