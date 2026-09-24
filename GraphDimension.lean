@@ -62,3 +62,10 @@ public import GraphDimension.Geometry.ExtendClique
 public import GraphDimension.Geometry.TailThree
 public import GraphDimension.Extremal.FKS.EqualityBranches
 public import GraphDimension.Extremal.FKS.Uniqueness
+public import GraphDimension.Combinatorics.SimpleGraph.FiveVertices
+public import GraphDimension.Combinatorics.SimpleGraph.SixVertices
+public import GraphDimension.Extremal.EightEdges
+public import GraphDimension.Extremal.NineEdges
+public import GraphDimension.Combinatorics.SimpleGraph.SmallGraphsThree
+public import GraphDimension.Examples.SmallGraphsThree
+public import GraphDimension.Combinatorics.SimpleGraph.SevenVerticesComplement
