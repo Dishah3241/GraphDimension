@@ -30,7 +30,7 @@ declaration. "not yet" means that row has no declaration in this library.
 | `SphereEmbeddable.orthogonalSum` | `SimpleGraph.SphereEmbeddable.orthogonalSum` (`Sphere/OrthogonalSum.lean`) |
 | `SphereEmbeddable.pole` | `SimpleGraph.SphereEmbeddable.pole` (one vertex, any neighbours) and `.poles` (two distinct non-adjacent vertices) (`Sphere/Poles.lean`) |
 | `coreDelete`, the `(d − 1)`-core | `SimpleGraph.exists_core` (re-attachment principle: a core `c` whose vertices have more than `k` neighbours in `c`, and `P c → P univ` for any `P` closed under adding a vertex with at most `k` placed neighbours), `exists_core_subset`, `induce_edgeFinset_card_le`, `exists_core_of_degenerate`; example `Examples/K4Pendant.lean` |
-| `UnitDistEmbeddable.extend_tail`, `t ≤ 2` (rung 3) | `SimpleGraph.UnitDistEmbeddable.extend_tail` (`3 ≤ d`, placed pairs `< 2` apart, at most two edges leave `s`); `t = 3` (Lemma T) not yet |
+| `UnitDistEmbeddable.extend_tail`, `t ≤ 2` (rung 3) | `SimpleGraph.UnitDistEmbeddable.extend_tail` (`3 ≤ d`, placed pairs `< 2` apart, at most two edges leave `s`); `t ≤ 3` (Lemma T, rung 4): `SimpleGraph.UnitDistEmbeddable.extend_tail_three` (`4 ≤ d`, every placed triple has an infinite common unit sphere) and `infinite_common_unit_sphere_twoSimplices`, `Geometry/TailThree.lean` |
 | `unitDistEmbeddable_three_of_card_edges_le_eight` (`g(3) = 8`) | not yet; seed is Erdos1007 `Geometry/EightEdges.lean` |
 | The induction's statement | `SimpleGraph.FKSStatement k` (`S(k)`), with `completeMinusTriangle` (`K_n − K₃`) and `fksBudget` (`g`), `Extremal/FKS/Defs.lean`; examples `Examples/FKSDefs.lean` |
 | `S(2)` (both halves) | `SimpleGraph.fksStatement_two` (`Extremal/FKS/Base.lean`). `S(3)` needs no separate base: FKS's step runs from `d = 3` |
