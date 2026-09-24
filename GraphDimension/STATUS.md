@@ -42,6 +42,6 @@ declaration. "not yet" means that row has no declaration in this library.
 | `unitDistEmbeddable_twoSimplices` (Lemma S) | `SimpleGraph.exists_twoSimplices_placement` (`1 < d`; apex distance `√(2 + 2/d) < 2`) |
 | `infinite_common_unit_sphere_two_apices` (Lemma R, repaired; A36) | `EuclideanGeometry.infinite_common_unit_sphere_two_apices` (`Geometry/TwoApices.lean`; `d ≥ 4`) |
 | `UnitDistEmbeddable.extend_tail` (Lemma T) | not yet |
-| `UnitDistEmbeddable.extend_simplex` (Lemma P) | not yet |
+| `UnitDistEmbeddable.extend_simplex` (Lemma P) | `SimpleGraph.UnitDistEmbeddable.extend_of_clique_neighbors` (`Geometry/ExtendClique.lean`): clique neighbourhoods of size at most `d − 1`, overlaps allowed, no non-adjacency needed |
 | `unitDistEmbeddable_of_card_edges_eq` (rung 4) | not yet; statement not frozen |
 | bridge to Mathlib | `SimpleGraph.unitDistEmbeddable_iff_nonempty_unitDistEmbedding`: `UnitDistEmbeddable n` iff Mathlib's `UnitDistEmbedding` into `EuclideanSpace ℝ (Fin n)` is nonempty |

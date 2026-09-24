@@ -58,3 +58,4 @@ public import GraphDimension.Extremal.FKS.CaseTwoBoundary
 public import GraphDimension.Extremal.FKS.CaseTwoBridge
 public import GraphDimension.Extremal.FKS.Step
 public import GraphDimension.Extremal.FKS.Theorem3
+public import GraphDimension.Geometry.ExtendClique
