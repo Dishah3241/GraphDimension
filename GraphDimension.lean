@@ -82,3 +82,4 @@ public import GraphDimension.Geometry.CompleteMultipartiteOneOneFive
 public import GraphDimension.Combinatorics.SimpleGraph.FiveVerticesContainment
 public import GraphDimension.Extremal.TenEdges.DegreeTwo
 public import GraphDimension.Extremal.TenEdges.SixVertices
+public import GraphDimension.Extremal.TenEdges

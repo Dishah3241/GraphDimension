@@ -43,6 +43,7 @@ declaration. "not yet" means that row has no declaration in this library.
 | At most five vertices, no `K₅` (P9 C2) | `SimpleGraph.isContained_completeGraph_five_deleteEdge_of_card_le_five` (`Combinatorics/SimpleGraph/FiveVerticesContainment.lean`) |
 | Degree-2 reduction, ≤ 7 vertices and ≤ 10 edges (P9 C4) | `SimpleGraph.unitDistEmbeddable_three_of_degree_eq_two` (`Extremal/TenEdges/DegreeTwo.lean`) |
 | Six vertices, minimum degree 3 (P9 C5) | `SimpleGraph.unitDistEmbeddable_three_fin_six_of_minDegree_ge_three` (`Extremal/TenEdges/SixVertices.lean`) |
+| Ten-edge lemma (P9 E) | **`SimpleGraph.unitDistEmbeddable_three_of_ncard_edgeSet_le_ten`** (≤ 7 vertices, ≤ 10 edges, no `K₅`, no `K₃,₃`), `Extremal/TenEdges.lean` |
 | The induction's statement | `SimpleGraph.FKSStatement k` (`S(k)`), with `completeMinusTriangle` (`K_n − K₃`) and `fksBudget` (`g`), `Extremal/FKS/Defs.lean`; examples `Examples/FKSDefs.lean` |
 | `S(2)` (both halves) | `SimpleGraph.fksStatement_two` (`Extremal/FKS/Base.lean`). `S(3)` needs no separate base: FKS's step runs from `d = 3` |
 | FKS Thm 3, edge counts (blueprint `lem:branch-A`, `lem:branch-B`, `lem:case1`, `lem:case2-count`) | `Extremal/FKS/Counting.lean`: `card_edgeSet_ge_of_copy_add_vertex`, `card_edgeSet_ge_of_two_outside_clique`, `completeMinusTriangle_isContained_of_one_outside_clique`, `card_edgeSet_ge_of_cliques_small_inter`, `card_edgeSet_ge_of_cliques_inter_pred`, `card_edgeSet_ge_of_copy_two_external`; example `Examples/FKSCounting.lean` |
