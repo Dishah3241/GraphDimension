@@ -72,3 +72,11 @@ public import GraphDimension.Combinatorics.SimpleGraph.SevenVerticesComplement
 public import GraphDimension.Combinatorics.SimpleGraph.SixVerticesTenEdges
 public import GraphDimension.Combinatorics.SimpleGraph.SubdividedCompleteBipartite
 public import GraphDimension.Combinatorics.SimpleGraph.SevenVerticesContainment
+public import GraphDimension.Geometry.Prism
+public import GraphDimension.Geometry.Wheel
+public import GraphDimension.Geometry.Octahedron
+public import GraphDimension.Geometry.ConeTwoTriangles
+public import GraphDimension.Geometry.SubdividedCompleteBipartite
+public import GraphDimension.Geometry.PathComplement
+public import GraphDimension.Geometry.CompleteMultipartiteOneOneFive
+public import GraphDimension.Combinatorics.SimpleGraph.FiveVerticesContainment
