@@ -80,3 +80,5 @@ public import GraphDimension.Geometry.SubdividedCompleteBipartite
 public import GraphDimension.Geometry.PathComplement
 public import GraphDimension.Geometry.CompleteMultipartiteOneOneFive
 public import GraphDimension.Combinatorics.SimpleGraph.FiveVerticesContainment
+public import GraphDimension.Extremal.TenEdges.DegreeTwo
+public import GraphDimension.Extremal.TenEdges.SixVertices
