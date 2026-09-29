@@ -378,7 +378,8 @@ edges and no placement, and the induction carries the containment over. Otherwis
 is at least three, and the classification
 `nonempty_iso_completeBipartiteGraph_three_three_of_not_unitDistEmbeddable_three` applies.
 
-This is the `d = 3` base of FKS Problem 2: `g(3) = 8` and `f_D(7) = 3`. Chaffee and Noble,
+It is the nine-edge step behind `g(3) = 8`, and one ingredient of the `d = 3` case of FKS Problem 2
+(`f_D(7) ≤ 3`); this theorem itself states only the containment. Chaffee and Noble,
 *Dimension 4 and dimension 5 graphs with minimum edge set*, Australas. J. Combin. **64(2)**
 (2016), 327–333, Theorem 7. -/
 theorem completeBipartiteGraph_three_three_isContained_of_not_unitDistEmbeddable_three
