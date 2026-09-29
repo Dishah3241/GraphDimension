@@ -91,4 +91,6 @@ public import GraphDimension.Combinatorics.SimpleGraph.MatchingPairs
 public import GraphDimension.Combinatorics.SimpleGraph.TutteCounting
 public import GraphDimension.Combinatorics.SimpleGraph.TutteHalfOrder
 public import GraphDimension.Combinatorics.SimpleGraph.TutteHalfOrder.Nonempty
+public import GraphDimension.Combinatorics.SimpleGraph.TutteHalfOrder.Empty
 public import GraphDimension.Sphere.Bipartite
+public import GraphDimension.Sphere.PerfectMatching
