@@ -84,3 +84,11 @@ public import GraphDimension.Extremal.TenEdges.DegreeTwo
 public import GraphDimension.Extremal.TenEdges.SixVertices
 public import GraphDimension.Extremal.TenEdges
 public import GraphDimension.Extremal.SevenVertices
+public import GraphDimension.Combinatorics.SimpleGraph.CompleteComponent
+public import GraphDimension.Combinatorics.SimpleGraph.ComponentCardinality
+public import GraphDimension.Combinatorics.SimpleGraph.IsolatedVertices
+public import GraphDimension.Combinatorics.SimpleGraph.MatchingPairs
+public import GraphDimension.Combinatorics.SimpleGraph.TutteCounting
+public import GraphDimension.Combinatorics.SimpleGraph.TutteHalfOrder
+public import GraphDimension.Combinatorics.SimpleGraph.TutteHalfOrder.Nonempty
+public import GraphDimension.Sphere.Bipartite
