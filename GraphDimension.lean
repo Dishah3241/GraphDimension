@@ -95,3 +95,5 @@ public import GraphDimension.Combinatorics.SimpleGraph.TutteHalfOrder.Empty
 public import GraphDimension.Sphere.Bipartite
 public import GraphDimension.Sphere.PerfectMatching
 public import GraphDimension.Sphere.HalfOrder
+public import GraphDimension.Geometry.CommonNeighbors
+public import GraphDimension.Geometry.CommonUnitSphere
